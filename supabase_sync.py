@@ -170,20 +170,25 @@ def test_connection(supabase_url: str = None, supabase_key: str = None):
     if not url or not key:
         return {"success": False, "error": "Supabase URL and API Key are required."}
 
-    # Ping rest root or buildings table
+    # 1. First test root REST API endpoint to verify key authentication
+    root_res = _make_supabase_request(url, key, "", method='GET', timeout=8.0)
+    if "error" in root_res:
+        return {"success": False, "error": f"Supabase Authentication Error ({root_res['status']}): {root_res['error']}"}
+
+    # 2. Test buildings table to check if schema is installed
     res = _make_supabase_request(url, key, "buildings?select=id&limit=1", method='GET', timeout=8.0)
     if "error" in res:
-        err = res["error"]
-        if "relation \"public.buildings\" does not exist" in err:
+        err = str(res["error"])
+        if "relation \"public.buildings\" does not exist" in err or "PGRST205" in err or "Could not find the table" in err:
             return {
                 "success": True,
                 "connected": True,
                 "schema_needed": True,
-                "message": "Connected to Supabase! However, database tables have not been created yet in Supabase. Please run the provided SQL Schema in Supabase SQL Editor."
+                "message": "Connected to Supabase! Database tables have not been created yet. Please execute supabase_schema.sql in Supabase SQL Editor."
             }
         return {"success": False, "error": f"Supabase error ({res['status']}): {err}"}
 
-    return {"success": True, "connected": True, "message": "Successfully connected to Supabase live database!"}
+    return {"success": True, "connected": True, "schema_needed": False, "message": "Successfully connected to Supabase live database!"}
 
 def sync_push(supabase_url: str = None, supabase_key: str = None, building_id: str = None):
     """Pushes local SQLite changes to Supabase using PostgREST upsert (resolution=merge-duplicates)."""
