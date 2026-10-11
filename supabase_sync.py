@@ -745,22 +745,57 @@ ALTER TABLE public.accounts_ledger ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.system_profile ENABLE ROW LEVEL SECURITY;
 
 -- Allow anon & authenticated API keys full access
-CREATE POLICY IF NOT EXISTS "Allow all for anon on buildings" ON public.buildings FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on users" ON public.users FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on bank_accounts" ON public.bank_accounts FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on flats" ON public.flats FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on tenants" ON public.tenants FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on family_members" ON public.family_members FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on vehicles" ON public.vehicles FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on tenant_history_archive" ON public.tenant_history_archive FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on flat_occupancy_history" ON public.flat_occupancy_history FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on visitor_logs" ON public.visitor_logs FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on domestic_staff" ON public.domestic_staff FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on staff_attendance" ON public.staff_attendance FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on gas_inventory_summary" ON public.gas_inventory_summary FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on gas_deliveries" ON public.gas_deliveries FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on gas_inward_supply" ON public.gas_inward_supply FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on maintenance_jobs" ON public.maintenance_jobs FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on accounts_ledger" ON public.accounts_ledger FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY IF NOT EXISTS "Allow all for anon on system_profile" ON public.system_profile FOR ALL USING (true) WITH CHECK (true);
+DROP POLICY IF EXISTS "Allow all for anon on buildings" ON public.buildings;
+CREATE POLICY "Allow all for anon on buildings" ON public.buildings FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on users" ON public.users;
+CREATE POLICY "Allow all for anon on users" ON public.users FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on bank_accounts" ON public.bank_accounts;
+CREATE POLICY "Allow all for anon on bank_accounts" ON public.bank_accounts FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on flats" ON public.flats;
+CREATE POLICY "Allow all for anon on flats" ON public.flats FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on tenants" ON public.tenants;
+CREATE POLICY "Allow all for anon on tenants" ON public.tenants FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on family_members" ON public.family_members;
+CREATE POLICY "Allow all for anon on family_members" ON public.family_members FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on vehicles" ON public.vehicles;
+CREATE POLICY "Allow all for anon on vehicles" ON public.vehicles FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on tenant_history_archive" ON public.tenant_history_archive;
+CREATE POLICY "Allow all for anon on tenant_history_archive" ON public.tenant_history_archive FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on flat_occupancy_history" ON public.flat_occupancy_history;
+CREATE POLICY "Allow all for anon on flat_occupancy_history" ON public.flat_occupancy_history FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on visitor_logs" ON public.visitor_logs;
+CREATE POLICY "Allow all for anon on visitor_logs" ON public.visitor_logs FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on domestic_staff" ON public.domestic_staff;
+CREATE POLICY "Allow all for anon on domestic_staff" ON public.domestic_staff FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on staff_attendance" ON public.staff_attendance;
+CREATE POLICY "Allow all for anon on staff_attendance" ON public.staff_attendance FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on gas_inventory_summary" ON public.gas_inventory_summary;
+CREATE POLICY "Allow all for anon on gas_inventory_summary" ON public.gas_inventory_summary FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on gas_deliveries" ON public.gas_deliveries;
+CREATE POLICY "Allow all for anon on gas_deliveries" ON public.gas_deliveries FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on gas_inward_supply" ON public.gas_inward_supply;
+CREATE POLICY "Allow all for anon on gas_inward_supply" ON public.gas_inward_supply FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on maintenance_jobs" ON public.maintenance_jobs;
+CREATE POLICY "Allow all for anon on maintenance_jobs" ON public.maintenance_jobs FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on accounts_ledger" ON public.accounts_ledger;
+CREATE POLICY "Allow all for anon on accounts_ledger" ON public.accounts_ledger FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow all for anon on system_profile" ON public.system_profile;
+CREATE POLICY "Allow all for anon on system_profile" ON public.system_profile FOR ALL USING (true) WITH CHECK (true);
 """
