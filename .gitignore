@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller / Distribution files
+*.exe
+_internal/
+dist/
+build/
+*.spec
+
+# Database & Local Media (Offline local cache)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/media/*
+!data/media/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+
+# Sensitive local configurations
+data/supabase_config.json
+
+# OS generated files
+desktop.ini
+Thumbs.db
+.DS_Store

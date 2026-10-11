@@ -1,0 +1,3577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS ResidentPro — Enterprise Residential Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. LOGIN OVERLAY — DS RESIDENTPRO SPLIT-SCREEN ENTERPRISE DESIGN
+       ======================================================================== -->
+  <div id="loginOverlay">
+    <div class="login-split-container">
+      
+      <!-- LEFT PANEL: Enterprise Briefing & Dark Glassmorphism Building Vector -->
+      <div class="login-left-panel">
+        <div class="login-brand-header">
+          <div class="login-logo-badge">DS</div>
+          <div class="login-brand-titles">
+            <div class="login-brand-title">DS ResidentPro</div>
+            <div class="login-brand-tagline">Enterprise Residential Management System</div>
+          </div>
+        </div>
+
+        <!-- Minimal Apartment Building Vector Illustration with Glassmorphism -->
+        <div class="login-illustration-wrapper">
+          <svg class="building-vector-svg" viewBox="0 0 380 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="35" width="85" height="115" rx="6" fill="url(#bldg1)" stroke="#334155" stroke-width="1.5"/>
+            <rect x="125" y="15" width="130" height="135" rx="8" fill="url(#bldg2)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1.5"/>
+            <rect x="270" y="48" width="85" height="102" rx="6" fill="url(#bldg3)" stroke="#334155" stroke-width="1.5"/>
+            <g fill="#38BDF8" fill-opacity="0.65">
+              <rect x="42" y="50" width="16" height="12" rx="2"/><rect x="72" y="50" width="16" height="12" rx="2"/>
+              <rect x="42" y="75" width="16" height="12" rx="2"/><rect x="72" y="75" width="16" height="12" rx="2"/>
+              <rect x="42" y="100" width="16" height="12" rx="2"/><rect x="72" y="100" width="16" height="12" rx="2"/>
+
+              <rect x="145" y="32" width="22" height="16" rx="2"/><rect x="179" y="32" width="22" height="16" rx="2"/><rect x="213" y="32" width="22" height="16" rx="2"/>
+              <rect x="145" y="62" width="22" height="16" rx="2"/><rect x="179" y="62" width="22" height="16" rx="2"/><rect x="213" y="62" width="22" height="16" rx="2"/>
+              <rect x="145" y="92" width="22" height="16" rx="2"/><rect x="179" y="92" width="22" height="16" rx="2"/><rect x="213" y="92" width="22" height="16" rx="2"/>
+
+              <rect x="288" y="65" width="16" height="12" rx="2"/><rect x="318" y="65" width="16" height="12" rx="2"/>
+              <rect x="288" y="90" width="16" height="12" rx="2"/><rect x="318" y="90" width="16" height="12" rx="2"/>
+            </g>
+            <circle cx="190" cy="130" r="3.5" fill="#10B981"/>
+            <defs>
+              <linearGradient id="bldg1" x1="25" y1="35" x2="110" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1E293B" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#0F172A" stop-opacity="0.98"/>
+              </linearGradient>
+              <linearGradient id="bldg2" x1="125" y1="15" x2="255" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1E293B" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#0F172A" stop-opacity="1"/>
+              </linearGradient>
+              <linearGradient id="bldg3" x1="270" y1="48" x2="355" y2="150" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1E293B" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#0F172A" stop-opacity="0.98"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="login-briefing-text">
+          Designed exclusively for <strong>DS Maintenance</strong>, <strong>DS ResidentPro</strong> is an end-to-end desktop management solution built to streamline apartment administration, tenant lifecycle tracking, billing workflows, and visitor oversight.
+        </div>
+
+        <!-- Key Architectural & Security Highlights -->
+        <div class="login-highlights-list">
+          <div class="login-highlight-item">
+            <div class="highlight-icon">🛡️</div>
+            <div>
+              <div class="highlight-title">Military-Grade Data Protection</div>
+              <div class="highlight-desc">Fully compliant with advanced security standards, utilizing AES-256 bit encryption for all local storage, automated backups, and offline record sets.</div>
+            </div>
+          </div>
+
+          <div class="login-highlight-item">
+            <div class="highlight-icon">🔒</div>
+            <div>
+              <div class="highlight-title">Powered by EMARATIS</div>
+              <div class="highlight-desc">Engineered with an enterprise security core developed by EMARATIS, guaranteeing strict access isolation, tamper-proof audit trails, and 100% data confidentiality.</div>
+            </div>
+          </div>
+
+          <div class="login-highlight-item">
+            <div class="highlight-icon">⚡</div>
+            <div>
+              <div class="highlight-title">Operational Efficiency</div>
+              <div class="highlight-desc">Purpose-built for high-speed reception data entry, automated invoice generation, utility monitoring, and instant administrative reporting.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL: Direct Credentials Box -->
+      <div class="login-right-panel">
+        <div class="login-box">
+          <div class="login-box-header">
+            <h2>Account Sign In</h2>
+            <p>Select your role and enter credentials to access your console</p>
+          </div>
+
+          <!-- Role Selector -->
+          <div class="role-selector-container">
+            <label class="form-label" style="text-align: left; display: block; margin-bottom: 6px;">Select Role</label>
+            <div class="role-tabs">
+              <button type="button" id="roleBtnAdmin" class="role-tab-btn active" onclick="selectLoginRole('admin')">
+                <span>👑</span> Master Admin
+              </button>
+              <button type="button" id="roleBtnManager" class="role-tab-btn" onclick="selectLoginRole('manager')">
+                <span>👔</span> Building Manager
+              </button>
+              <button type="button" id="roleBtnReception" class="role-tab-btn" onclick="selectLoginRole('receptionist')">
+                <span>👥</span> Receptionist
+              </button>
+            </div>
+          </div>
+
+          <form onsubmit="handleLogin(event)">
+            <div class="form-group" style="text-align: left; margin-bottom: 14px;">
+              <label class="form-label">Username</label>
+              <input type="text" id="loginUsername" class="form-input" placeholder="Enter username" required />
+            </div>
+            <div class="form-group" style="text-align: left; margin-bottom: 14px;">
+              <label class="form-label">Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="loginPassword" class="form-input" placeholder="Enter password" required />
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('loginPassword', this)" title="Toggle Password Visibility">👁</button>
+              </div>
+            </div>
+
+            <div class="login-options-row">
+              <label class="remember-me-label">
+                <input type="checkbox" id="loginRememberMe" onchange="toggleRememberMe(this)" />
+                <span>Remember Me</span>
+              </label>
+              <span class="offline-mode-pill">🟢 100% Offline Secured</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-login-submit">
+              🔒 Secure Login
+            </button>
+          </form>
+
+          <!-- Footer Security Badging -->
+          <div class="login-footer-security">
+            <div class="security-badge-item">
+              <span class="security-icon">🔐</span>
+              <span>Encrypted Connection: <strong>AES-256</strong> local database encryption</span>
+            </div>
+            <div class="security-badge-item">
+              <span class="security-icon">🛡️</span>
+              <span>Protected & Powered by <strong>EMARATIS Security Engine</strong></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       2. TOP ACTION BAR (2-TIER CLEAN ROW LAYOUT - NEVER CLIPPED)
+       ======================================================================== -->
+  <header class="top-action-bar">
+    <!-- Row 1: Brand, Live Clock & User Profile -->
+    <div class="brand-row">
+      <div class="brand-left">
+        <div class="ds-logo-badge">DS</div>
+        <div class="brand-title">DS ResidentPro</div>
+        <div class="building-badge" id="headerBuildingBadge">BUILDING 01 [OCEAN TOWER]</div>
+        <select id="topBuildingSelector" class="form-select" style="display: none; padding: 4px 10px; font-size: 12px; max-width: 250px;" onchange="onBuildingSelectChange()">
+        </select>
+      </div>
+
+      <div class="brand-right">
+        <!-- Live System Clock -->
+        <div id="headerLiveClock" style="font-size: 12px; color: #38bdf8; font-weight: 600; font-family: monospace; background: rgba(15, 23, 42, 0.6); padding: 5px 10px; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.2);">
+          --:--:--
+        </div>
+
+        <!-- Audio Sound Toggle Button -->
+        <button id="headerSoundBtn" class="btn-sound-toggle" onclick="toggleSoundEffects()" title="Toggle Sound Effects">
+          🔊
+        </button>
+
+        <!-- Admin Daily Sync Alert Notification Bell Button -->
+        <button id="headerNotificationBtn" class="btn-notification-bell" onclick="openDailySyncNotificationModal(true)" title="Daily Reception Sync Status & Notifications" style="display: none;">
+          <span class="bell-icon">🔔</span>
+          <span id="headerNotificationBadge" class="notification-badge badge-danger">0</span>
+        </button>
+
+        <button id="headerSupabaseSyncBtn" class="btn-glass-sync" onclick="openSupabaseSyncModal()" style="border-color: #3ecf8e; color: #3ecf8e; background: rgba(62, 207, 142, 0.1);">
+          <span id="supabaseHeaderDot" style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#3ecf8e; margin-right:4px;"></span>⚡ Supabase Cloud
+        </button>
+
+        <button class="btn-glass-sync" onclick="handleHeaderSyncButtonClick()">
+          🔄 Export Data (.dsmync)
+        </button>
+
+        <!-- User Profile & Settings Dropdown Menu -->
+        <div class="profile-menu-container">
+          <button class="profile-trigger-btn" onclick="toggleProfileDropdown(event)">
+            <span class="status-dot"></span>
+            <span id="headerUserName">Receptionist_01</span>
+            <span style="font-size: 10px; opacity: 0.8;">▾</span>
+          </button>
+
+          <div id="profileDropdownMenu" class="profile-dropdown-menu">
+            <div class="dropdown-header-info">
+              <div class="dropdown-user-name" id="dropdownFullName">Master System Admin</div>
+              <div class="dropdown-user-role" id="dropdownRoleTitle">Administrator • All Buildings</div>
+            </div>
+
+            <button class="dropdown-item-btn" onclick="toggleSoundEffects()">
+              <span id="soundToggleDropdownLabel">🔊 Sound Effects: Enabled</span>
+              <span id="soundToggleDropdownIcon">🔔</span>
+            </button>
+
+            <div class="dropdown-divider"></div>
+
+            <button id="adminCorporateDropdownBtn" class="dropdown-item-btn" onclick="openCorporateProfileModal()" style="display: none;">
+              <span>🏢 Company & Office Details</span>
+              <span>🏷️</span>
+            </button>
+
+            <button id="adminBuildingNamesDropdownBtn" class="dropdown-item-btn" onclick="openCustomBuildingNamesModal()" style="display: none;">
+              <span>🏢 Rename 5 Buildings</span>
+              <span>✏️</span>
+            </button>
+
+            <button id="adminSettingsDropdownBtn" class="dropdown-item-btn" onclick="switchTab('settings')" style="display: none;">
+              <span>⚙️ Receptionists & Users</span>
+              <span>👥</span>
+            </button>
+
+            <button id="adminChangePasswordBtn" class="dropdown-item-btn" onclick="openChangePasswordModal()" style="display: none;">
+              <span>🔑 Change Password</span>
+              <span>🔒</span>
+            </button>
+
+            <div class="dropdown-divider"></div>
+
+            <button class="dropdown-item-btn" style="color: #f43f5e;" onclick="handleLogout()">
+              <span>🚪 Sign Out / Logout</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Full Width Navigation Tabs & Top Calendar Trigger -->
+    <div class="nav-tabs-bar">
+      <ul class="nav-tabs-list">
+        <li><button class="nav-tab-btn active" data-tab="dashboard" onclick="switchTab('dashboard')">📊 Dashboard</button></li>
+        <li><button class="nav-tab-btn" data-tab="flats" onclick="switchTab('flats')">🏢 Flats & Tenants</button></li>
+        <li><button class="nav-tab-btn" data-tab="history" onclick="switchTab('history')">📜 Tenant History</button></li>
+        <li><button class="nav-tab-btn" data-tab="visitors" onclick="switchTab('visitors')">👥 Visitors & Maids</button></li>
+        <li><button class="nav-tab-btn" data-tab="gas" onclick="switchTab('gas')">🔥 Gas Cylinders</button></li>
+        <li><button class="nav-tab-btn" data-tab="repairs" onclick="switchTab('repairs')">🛠 Other Income Jobs</button></li>
+        <li><button class="nav-tab-btn" data-tab="ledger" onclick="switchTab('ledger')">💰 Cash Ledger</button></li>
+        
+        <!-- Admin-Only Modules -->
+        <li id="reportsTabNav" style="display: none;"><button class="nav-tab-btn" data-tab="reports" onclick="switchTab('reports')">📈 Monthly Reports</button></li>
+        <li id="adminTabNav" style="display: none;"><button class="nav-tab-btn" data-tab="admin" onclick="switchTab('admin')">👑 Master Admin Console</button></li>
+        <li id="settingsTabNav" style="display: none;"><button class="nav-tab-btn" data-tab="settings" onclick="switchTab('settings')">⚙️ Settings</button></li>
+      </ul>
+
+      <!-- Interactive Calendar Trigger Pill -->
+      <button id="topCalendarTrigger" class="top-cal-trigger" onclick="openInteractiveCalendarModal()">
+        📅 Filter: Today ▾
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. APPLICATION CONTENT & MODULE VIEWS
+       ======================================================================== -->
+  <main class="app-content">
+
+    <!-- VIEW 1: DASHBOARD -->
+    <section id="view_dashboard" class="view-section active">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Operational Dashboard & Live Register</h2>
+          <p>Real-time occupancy, guest security, cylinder logistics, resident dossiers & instant management.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-info" onclick="openAssignTenantModal()">👤 + Register New Tenant</button>
+          <button class="btn btn-primary" onclick="openNewVisitorModal()">+ Check-in Visitor</button>
+          <button class="btn btn-success" onclick="openNewGasDeliveryModal()">+ Deliver Gas</button>
+          <button class="btn btn-warning" onclick="openNewRepairJobModal()">+ Log Repair</button>
+        </div>
+      </div>
+
+      <!-- Interactive Clickable KPI Grid -->
+      <div class="kpi-grid">
+        <div class="kpi-card interactive-kpi-card" onclick="openDashboardFlatsDossier()" title="Click to view all Apartment Profiles & Dossiers">
+          <div class="kpi-title">🏢 Total Apartments</div>
+          <div class="kpi-value" id="kpiTotalFlats">0</div>
+          <div class="kpi-subtext" id="kpiOccupiedFlats">0 Occupied (0 Vacant)</div>
+          <span id="kpiActiveTenants" style="display: none;">0</span>
+          <div class="kpi-hint">👉 Click to View Apartment Dossiers</div>
+        </div>
+
+        <div class="kpi-card interactive-kpi-card" onclick="openDashboardVisitorsDossier()" title="Click to view Live Visitors Log">
+          <div class="kpi-title">👥 Period Visitors Logged</div>
+          <div class="kpi-value" id="kpiTodayVisitors" style="color: #38bdf8;">0</div>
+          <div class="kpi-subtext" id="kpiInsideNow">0 Inside Premises Now</div>
+          <div class="kpi-hint">👉 Click to View Live Visitors Log</div>
+        </div>
+
+        <div class="kpi-card interactive-kpi-card" onclick="showGasDossierModal()" title="Click to view Gas Inventory & Active Cylinders by Flat">
+          <div class="kpi-title">🔥 Gas Reserve Stock</div>
+          <div class="kpi-value" id="kpiGasReserve" style="color: #fbbf24;">0</div>
+          <div class="kpi-subtext" id="kpiGasActive">0 Active / 0 Empty</div>
+          <div class="kpi-hint">👉 Click to View Gas Distribution</div>
+        </div>
+
+        <div class="kpi-card interactive-kpi-card" onclick="openDashboardStaffDossier()" title="Click to view Domestic Maids & Duty Roster">
+          <div class="kpi-title">🧹 Domestic Staff on Duty</div>
+          <div class="kpi-value" id="kpiStaffDuty" style="color: #34d399;">0 / 0</div>
+          <div class="kpi-subtext">Bahria Verified Maids</div>
+          <div class="kpi-hint">👉 Click to View Maid Rosters</div>
+        </div>
+
+        <div class="kpi-card interactive-kpi-card" onclick="openDashboardCollectionsDossier()" title="Click to view Cash & Bank Collections">
+          <div class="kpi-title">💵 Period Collections (Net)</div>
+          <div class="kpi-value" id="kpiMonthlyIncome" style="color: #10b981; font-size: 22px;">PKR 0</div>
+          <div class="kpi-subtext" id="kpiCashBankBreakdown">Cash vs Bank Collections</div>
+          <div class="kpi-hint">👉 Click to View Ledger Collections</div>
+        </div>
+
+        <div class="kpi-card interactive-kpi-card" onclick="openDashboardRepairsDossier()" title="Click to view On-Demand Repair Jobs & Receipts">
+          <div class="kpi-title">🛠 Repair Margin (Profit)</div>
+          <div class="kpi-value" id="kpiRepairMargin" style="color: #38bdf8; font-size: 22px;">PKR 0</div>
+          <div class="kpi-subtext" id="kpiRepairJobsCount">On-Demand In-House Profits</div>
+          <div class="kpi-hint">👉 Click to View Repair Receipts</div>
+        </div>
+      </div>
+
+      <!-- Universal Resident & Apartment Dossier Quick Search Bar -->
+      <div class="glass-panel" style="margin-bottom: 20px; padding: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3 style="margin: 0; font-size: 15px; display: flex; align-items: center; gap: 8px; color: #38bdf8;">
+              🔍 Universal Resident & Apartment Dossier Finder
+            </h3>
+            <p style="margin: 2px 0 0 0; font-size: 12px; color: #94a3b8;">
+              Search by Flat Number, Resident/Owner Name, Mobile (03xx), Vehicle Plate, or CNIC.
+            </p>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn btn-sm btn-secondary" onclick="clearDashboardSearch()">✕ Clear</button>
+          </div>
+        </div>
+
+        <div class="search-input-wrapper" style="width: 100%;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="dashboardUniversalSearchInput" class="form-input" 
+                 placeholder="Type Flat #, Resident / Owner Name, Mobile # (e.g. 0300...), Vehicle Reg, CNIC..." 
+                 onkeyup="handleDashboardUniversalSearch()" style="font-size: 13px; padding: 9px 14px 9px 38px;" />
+        </div>
+
+        <!-- Live Search Results Dropdown/Container -->
+        <div id="dashboardSearchResultsContainer" style="display: none; margin-top: 12px;"></div>
+      </div>
+
+      <!-- Live Dashboard Quick Operations & Resident Dossiers Workspace -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header" style="flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="dashboardWorkspaceTabGroup">
+            <button id="dashTabBtnFlats" class="btn btn-sm btn-primary" onclick="switchDashboardWorkspaceTab('flats')">🏢 Apartments & Dossiers</button>
+            <button id="dashTabBtnVisitors" class="btn btn-sm btn-secondary" onclick="switchDashboardWorkspaceTab('visitors')">🚪 Inside Visitors Now</button>
+            <button id="dashTabBtnGas" class="btn btn-sm btn-secondary" onclick="switchDashboardWorkspaceTab('gas')">🔥 Active Cylinders</button>
+            <button id="dashTabBtnStaff" class="btn btn-sm btn-secondary" onclick="switchDashboardWorkspaceTab('staff')">🧹 Verified Maids on Duty</button>
+          </div>
+          <div class="search-input-wrapper" style="max-width: 250px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="dashboardQuickTableFilter" class="form-input" placeholder="Quick filter table..." onkeyup="filterDashboardQuickTable()" />
+          </div>
+        </div>
+
+        <!-- Dashboard Sub-table 1: Flats & Dossiers -->
+        <div id="dashWorkspaceFlatsView" class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Flat #</th>
+                <th>Wing / Floor</th>
+                <th>Occupancy Status</th>
+                <th>Resident / Owner Name</th>
+                <th>Mobile Number</th>
+                <th>Vehicles / Maids</th>
+                <th>Quick Actions</th>
+              </tr>
+            </thead>
+            <tbody id="dashFlatsTableBody">
+              <tr><td colspan="7" style="text-align: center; color: #94a3b8; padding: 20px;">Loading apartments...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dashboard Sub-table 2: Live Visitors Inside Now -->
+        <div id="dashWorkspaceVisitorsView" class="table-responsive" style="display: none;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Target Flat</th>
+                <th>Guest Full Name</th>
+                <th>Contact Mobile #</th>
+                <th>CNIC Number</th>
+                <th>Check-In Time</th>
+                <th>Purpose of Visit</th>
+                <th>Quick Actions</th>
+              </tr>
+            </thead>
+            <tbody id="dashVisitorsTableBody">
+              <tr><td colspan="7" style="text-align: center; color: #94a3b8; padding: 20px;">Loading live visitors...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dashboard Sub-table 3: Active Gas Cylinders by Flat -->
+        <div id="dashWorkspaceGasView" class="table-responsive" style="display: none;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Flat #</th>
+                <th>Floor / Wing</th>
+                <th>Resident Details</th>
+                <th>Contact Phone</th>
+                <th>Last Delivery Date</th>
+                <th>Empty Cylinder Status</th>
+                <th>Quick Actions</th>
+              </tr>
+            </thead>
+            <tbody id="dashGasTableBody">
+              <tr><td colspan="7" style="text-align: center; color: #94a3b8; padding: 20px;">Loading active cylinders...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dashboard Sub-table 4: Domestic Maids on Duty -->
+        <div id="dashWorkspaceStaffView" class="table-responsive" style="display: none;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Maid Full Name</th>
+                <th>Role / Designation</th>
+                <th>Bahria Card #</th>
+                <th>Assigned Flat</th>
+                <th>CNIC Number</th>
+                <th>Duty Status</th>
+                <th>Quick Actions</th>
+              </tr>
+            </thead>
+            <tbody id="dashStaffTableBody">
+              <tr><td colspan="7" style="text-align: center; color: #94a3b8; padding: 20px;">Loading verified domestic staff...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+        </div>
+        <canvas id="dashboardRevenueChart"></canvas>
+      </div>
+
+      <!-- Dashboard Income & Expense Outflow Ledger Audit Register -->
+      <div class="glass-panel" style="margin-top: 20px;">
+        <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3>💰 Income & Expense Ledger Audit Register</h3>
+            <span style="font-size: 11.5px; color: #38bdf8;">Real-time Financial Inflows & Expenses (Who Paid, Recipient Name, Date, Purpose)</span>
+          </div>
+          <button class="btn btn-sm btn-secondary" onclick="switchTab('ledger')">📊 Open Full Ledger</button>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Entry Date</th>
+                <th>Building & Unit</th>
+                <th>Flow Type</th>
+                <th>Category</th>
+                <th>Payer / Recipient / Vendor Name</th>
+                <th>Service / Purpose Description</th>
+                <th>Payment Mode</th>
+                <th>Amount (PKR)</th>
+              </tr>
+            </thead>
+            <tbody id="dashboardLedgerTableBody">
+              <tr><td colspan="8" style="text-align: center; color: #94a3b8; padding: 18px;">Loading financial transactions...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: FLATS & TENANTS -->
+    <section id="view_flats" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Apartment Registry & Resident Profiles</h2>
+          <p>Filter Owner Occupied vs Rented vs Vacant flats, view owner dossiers, and manage family profiles.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-info" onclick="openAssignTenantModal()">👤 + Register New Tenant</button>
+          <button id="adminAddNewFlatBtn" class="btn btn-success" onclick="openAddNewFlatModal()" style="display: none;">+ Add New Flat</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('flats', 'Apartments & Occupancy Register')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <div class="filter-bar" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+        <div class="filter-group-left" style="display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 320px;">
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <div class="search-input-wrapper" style="flex: 1; min-width: 260px;">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="flatSearchInput" class="form-input" placeholder="Search by Flat #, Mobile #, Car Plate, Name..." onkeyup="filterFlats()" />
+            </div>
+            <!-- Explicit Occupancy Selector -->
+            <select id="flatOccupancyFilter" class="form-select" onchange="filterFlats()" style="min-width: 210px; font-weight: 600;">
+              <option value="ALL">🏢 All Apartments (All Flats)</option>
+              <option value="OWNER_OCCUPIED">🏠 Owner Occupied (Owner Living)</option>
+              <option value="RENTED">👤 Tenant Occupied (Rented Active)</option>
+              <option value="VACANT">🚪 Vacant / Inactive (Empty Flat)</option>
+            </select>
+          </div>
+          <!-- Multi-Field Quick Search Filter Pills -->
+          <div class="search-filter-pills">
+            <span style="font-size: 11px; color: #94a3b8; font-weight: 600;">Filter by:</span>
+            <button type="button" class="search-pill-btn active" data-field="all" onclick="setFlatSearchField('all', this)">⚡ All Fields</button>
+            <button type="button" class="search-pill-btn" data-field="flat" onclick="setFlatSearchField('flat', this)">🏢 Flat Number</button>
+            <button type="button" class="search-pill-btn" data-field="mobile" onclick="setFlatSearchField('mobile', this)">📱 Mobile / Phone</button>
+            <button type="button" class="search-pill-btn" data-field="vehicle" onclick="setFlatSearchField('vehicle', this)">🚗 Car / Vehicle Reg</button>
+            <button type="button" class="search-pill-btn" data-field="name" onclick="setFlatSearchField('name', this)">👤 Resident / Owner</button>
+          </div>
+        </div>
+        <div id="flatsSummaryBadge" style="font-size: 12px; color: #cbd5e1; background: rgba(15,23,42,0.6); padding: 7px 14px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.2);">
+          Loading apartment summary...
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Flat #</th>
+              <th>Building / Wing</th>
+              <th>Floor / Type</th>
+              <th>Occupancy Status & Owner</th>
+              <th>Current Resident Profile</th>
+              <th>Maintenance Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="flatsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VIEW 3: TENANT HISTORY (IMMUTABLE ARCHIVE) -->
+    <section id="view_history" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Permanent Historical Tenant Timeline & Contact Archive</h2>
+          <p>Immutable chronological ledger of past tenancies, phone contacts, profiles, family lists, and payment history.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('tenant_history', 'Permanent Historical Tenant Archive Statement')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <!-- Tenant History Calendar & Date Range Bar -->
+      <div class="filter-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="historyDateFilterButtonGroup">
+          <button class="date-quick-btn active" onclick="setHistoryDateFilter('all')">🌐 All Records</button>
+          <button class="date-quick-btn" onclick="setHistoryDateFilter('today')">⚡ Today</button>
+          <button class="date-quick-btn" onclick="setHistoryDateFilter('7days')">🗓 7 Days</button>
+          <button class="date-quick-btn" onclick="setHistoryDateFilter('month')">📊 Month</button>
+          <button class="date-quick-btn" onclick="setHistoryDateFilter('year')">📅 This Year</button>
+        </div>
+
+        <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 11.5px; color: #94a3b8; font-weight: 600;">Custom Calendar:</span>
+          <input type="date" id="historyDateFrom" class="form-input" onclick="this.showPicker && this.showPicker()" style="padding: 4px 8px; font-size: 12px; width: auto;" />
+          <span style="color: #64748b;">to</span>
+          <input type="date" id="historyDateTo" class="form-input" onclick="this.showPicker && this.showPicker()" style="padding: 4px 8px; font-size: 12px; width: auto;" />
+          <button class="btn btn-sm btn-primary" onclick="applyHistoryCustomDateRange()" style="padding: 5px 10px; font-size: 11px;">Apply Date</button>
+        </div>
+      </div>
+
+      <div class="filter-bar" style="display: flex; flex-direction: column; gap: 6px;">
+        <div class="search-input-wrapper" style="max-width: 500px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="historySearchInput" class="form-input" placeholder="Search flat #, past tenant, CNIC, phone, vehicle..." onkeyup="filterHistory()" />
+        </div>
+        <div class="search-filter-pills">
+          <span style="font-size: 11px; color: #94a3b8; font-weight: 600;">Filter by:</span>
+          <button type="button" class="search-pill-btn active" data-field="all" onclick="setHistorySearchField('all', this)">⚡ All Fields</button>
+          <button type="button" class="search-pill-btn" data-field="flat" onclick="setHistorySearchField('flat', this)">🏢 Flat Number</button>
+          <button type="button" class="search-pill-btn" data-field="name" onclick="setHistorySearchField('name', this)">👤 Past Tenant Name</button>
+          <button type="button" class="search-pill-btn" data-field="phone" onclick="setHistorySearchField('phone', this)">📱 Phone / Mobile</button>
+          <button type="button" class="search-pill-btn" data-field="cnic" onclick="setHistorySearchField('cnic', this)">💳 CNIC Number</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Flat #</th>
+              <th>Building</th>
+              <th>Past Tenant Name</th>
+              <th>Primary Phone / Mobile #</th>
+              <th>CNIC Number</th>
+              <th>Tenancy Tenure</th>
+              <th>Historical Ledger</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VIEW 4: VISITORS & MAIDS -->
+    <section id="view_visitors" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Security Desk, Visitor Verification & Bahria Maid Registry</h2>
+          <p>Photo capture check-in, live premises tracking, complete mobile numbers, and mandatory Bahria Town Karachi maid verification.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openNewVisitorModal()">+ Check-in Visitor</button>
+          <button class="btn btn-success" onclick="openNewStaffModal()">+ Register Domestic Maid</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('visitors', 'Visitors & Security Access Log Report')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>🚪 Guest / Visitor Logs</h3>
+          <span style="font-size: 11.5px; color: #94a3b8;">Security Check-In & Check-Out Timestamps</span>
+        </div>
+
+        <div class="filter-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="visitorsDateFilterButtonGroup">
+            <button class="date-quick-btn active" onclick="setVisitorsDateFilter('today')">⚡ Today</button>
+            <button class="date-quick-btn" onclick="setVisitorsDateFilter('yesterday')">📅 Yesterday</button>
+            <button class="date-quick-btn" onclick="setVisitorsDateFilter('2days')">⏱ 2 Days</button>
+            <button class="date-quick-btn" onclick="setVisitorsDateFilter('7days')">🗓 7 Days</button>
+            <button class="date-quick-btn" onclick="setVisitorsDateFilter('month')">📊 Month</button>
+            <button class="date-quick-btn" onclick="setVisitorsDateFilter('all')">🌐 All Records</button>
+          </div>
+
+          <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+            <span style="font-size: 11.5px; color: #94a3b8; font-weight: 600;">Custom Calendar:</span>
+            <input type="date" id="visitorDateFrom" class="form-input" onclick="this.showPicker && this.showPicker()" style="padding: 4px 8px; font-size: 12px; width: auto;" />
+            <span style="color: #64748b;">to</span>
+            <input type="date" id="visitorDateTo" class="form-input" onclick="this.showPicker && this.showPicker()" style="padding: 4px 8px; font-size: 12px; width: auto;" />
+            <button class="btn btn-sm btn-primary" onclick="applyVisitorsCustomDateRange()" style="padding: 5px 10px; font-size: 11px;">Apply Date</button>
+          </div>
+
+          <div class="search-input-wrapper" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="visitorSearchInput" class="form-input" placeholder="Search visitor name, flat #, contact..." onkeyup="filterVisitors()" />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Target Flat</th>
+                <th>Guest Full Name</th>
+                <th>Contact Phone #</th>
+                <th>CNIC Number</th>
+                <th>Check-In (Entry Time)</th>
+                <th>Check-Out (Exit Time)</th>
+                <th>Current Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="visitorsTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-panel">
+        <div class="panel-header">
+          <h3>🧹 Bahria Town Karachi Verified Domestic Staff & Maid Registry</h3>
+          <span style="font-size: 11.5px; color: #38bdf8; font-weight: 600;">Mandatory Card & Mobile Phone Verification</span>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="staffSearchInput" class="form-input" placeholder="Search maid name, phone, Bahria Card #, flat #..." onkeyup="filterStaff()" />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Staff / Maid Name</th>
+                <th>Phone / Mobile #</th>
+                <th>Bahria Reg / Card #</th>
+                <th>CNIC Number</th>
+                <th>Assigned Flats</th>
+                <th>Duty Status</th>
+                <th>Documents</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="staffTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: GAS CYLINDERS -->
+    <section id="view_gas" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Gas Cylinder Inventory & Split Payment Reconciliation</h2>
+          <p>Stock monitoring, inward supplier replenishment, sales deliveries, Hand Cash vs Bank reconciliation, and instant 80mm thermal receipts.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openNewGasSupplyModal()">📥 + Log Inward Stock Arrival</button>
+          <button class="btn btn-primary" onclick="openNewGasDeliveryModal()">🔥 + Log Cylinder Delivery</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('gas', 'Gas Cylinder Inventory & Deliveries Statement')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 16px;">
+        <div class="kpi-card">
+          <div class="kpi-title">📦 Reserve / Warehouse Stock</div>
+          <div class="kpi-value" id="gasReserveCount" style="color: #34d399;">0</div>
+          <div class="kpi-subtext">Ready for Delivery</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">🏠 Active in Apartments</div>
+          <div class="kpi-value" id="gasActiveCount" style="color: #38bdf8;">0</div>
+          <div class="kpi-subtext">Currently In-Use</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">🔄 Empty Cylinders Returned</div>
+          <div class="kpi-value" id="gasEmptyCount" style="color: #fbbf24;">0</div>
+          <div class="kpi-subtext">Ready for Refill Supplier</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">📥 Period Inward Received</div>
+          <div class="kpi-value" id="gasInwardCount" style="color: #a78bfa;">0 Inward</div>
+          <div class="kpi-subtext" id="gasInwardCost">Total Cost: PKR 0</div>
+        </div>
+      </div>
+
+      <!-- Quick Date Preset Bar & View Switcher for Reception & Admin -->
+      <div class="filter-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="gasDateFilterButtonGroup">
+          <button class="date-quick-btn active" onclick="setGasDateFilter('today')">⚡ Today</button>
+          <button class="date-quick-btn" onclick="setGasDateFilter('yesterday')">📅 Yesterday</button>
+          <button class="date-quick-btn" onclick="setGasDateFilter('2days')">⏱ 2 Days</button>
+          <button class="date-quick-btn" onclick="setGasDateFilter('7days')">🗓 7 Days</button>
+          <button class="date-quick-btn" onclick="setGasDateFilter('month')">📊 Month</button>
+          <button class="date-quick-btn" onclick="setGasDateFilter('all')">🌐 All Records</button>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <div style="display: flex; background: rgba(15,23,42,0.6); border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; padding: 2px;">
+            <button id="gasTabBtnDeliveries" class="btn btn-sm btn-primary" onclick="switchGasSubTab('deliveries')" style="padding: 4px 10px; font-size: 11px;">📋 Deliveries & Sales</button>
+            <button id="gasTabBtnSupplies" class="btn btn-sm btn-secondary" onclick="switchGasSubTab('supplies')" style="padding: 4px 10px; font-size: 11px;">📥 Inward Supply Log</button>
+            <button id="gasTabBtnActiveFlats" class="btn btn-sm btn-secondary" onclick="switchGasSubTab('activeFlats')" style="padding: 4px 10px; font-size: 11px;">🏠 Active by Flat</button>
+          </div>
+          <div class="search-input-wrapper" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="gasSearchInput" class="form-input" placeholder="Search receipt #, flat #, supplier..." onkeyup="filterGasDeliveries()" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-View 1: Deliveries Log Table -->
+      <div id="gasDeliveriesContainer" class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Receipt #</th>
+              <th>Target Flat</th>
+              <th>Delivery Date & Time</th>
+              <th>Quantity</th>
+              <th>Total Amount</th>
+              <th>Empty Returned</th>
+              <th>Payment Mode & Collector</th>
+              <th>Receipt & Actions</th>
+            </tr>
+          </thead>
+          <tbody id="gasDeliveriesTableBody">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sub-View 2: Inward Stock Supplies (Arrivals & Procurement Logs) -->
+      <div id="gasSuppliesContainer" class="table-responsive" style="display: none;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Supply Date & Time</th>
+              <th>Supplier / Plant</th>
+              <th>Delivered By (Driver / Rep)</th>
+              <th>Vehicle #</th>
+              <th>Cylinders Received</th>
+              <th>Unit Cost</th>
+              <th>Total Cost</th>
+              <th>Payment Mode</th>
+              <th>Batch / Challan #</th>
+              <th>Receiver</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="gasSuppliesTableBody">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sub-View 3: Active Cylinders by Flat Distribution (Kahan Kahan Kis Ke Paas Hain) -->
+      <div id="gasActiveFlatsContainer" class="table-responsive" style="display: none;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Flat #</th>
+              <th>Floor / Wing</th>
+              <th>Occupancy Status</th>
+              <th>Resident / Owner Details</th>
+              <th>Phone Contact</th>
+              <th>Last Delivery Time</th>
+              <th>Last Empty Return</th>
+              <th>Total Delivered</th>
+            </tr>
+          </thead>
+          <tbody id="gasActiveFlatsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VIEW 6: OTHER INCOME REPAIRS -->
+    <section id="view_repairs" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>DS Maintenance On-Demand Jobs (Other Income Engine)</h2>
+          <p>Log in-house repairs (Plumbing, AC, Electrical, Carpentry) with automatic Net Profit Margin calculation.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openNewRepairJobModal()">+ Log Repair Job</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('repairs', 'Repairs & Maintenance Income Statement')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="repairSearchInput" class="form-input" placeholder="Search flat #, technician, category..." onkeyup="filterRepairs()" />
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Flat / Location</th>
+              <th>Category</th>
+              <th>Issue Description</th>
+              <th>Technician</th>
+              <th>Billed Amount (Costs)</th>
+              <th>Net Profit Margin</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="repairsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VIEW 7: ACCOUNTS & CASH LEDGER -->
+    <section id="view_ledger" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>Accounts & Cash-in-Hand Ledger</h2>
+          <p>Transparent double-entry transaction record for maintenance, gas, repair profits, and building expenses.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openNewLedgerModal()">+ Record Entry</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('ledger', 'General Accounts Ledger Statement')">🖨️ / 📄 Print & Export PDF</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="ledgerSearchInput" class="form-input" placeholder="Search category, person, notes..." onkeyup="filterLedger()" />
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Building</th>
+              <th>Category</th>
+              <th>Description / Reference</th>
+              <th>Payment Mode</th>
+              <th>Amount (PKR)</th>
+              <th>Collector / Recipient</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="ledgerTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VIEW 8: EXECUTIVE PERIODIC & MONTHLY REPORTS (MASTER ADMIN ONLY) -->
+    <section id="view_reports" class="view-section">
+      
+      <!-- Executive Corporate Header Banner -->
+      <div class="executive-corporate-banner">
+        <div class="corporate-banner-left">
+          <div class="corporate-banner-tag">OFFICIAL MANAGEMENT AUDIT STATEMENT</div>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px;">
+            <h2 id="bannerCompanyName" class="corporate-banner-title">DS MAINTENANCE</h2>
+            <button id="adminEditCorporateBtn" class="btn btn-sm btn-secondary" onclick="openCorporateProfileModal()" style="display: none; padding: 2px 8px; font-size: 11px;">✏️ Edit Corporate Details</button>
+          </div>
+          <div class="corporate-banner-details">
+            <div class="corporate-detail-line">
+              <strong class="corporate-label">Corporate Office:</strong> 
+              <span id="bannerOfficeAddress">Office No. 907, 9th Floor, Dominion Business Center 01, Jinnah Avenue, Bahria Town Karachi (BTK)</span>
+            </div>
+            <div class="corporate-detail-line" style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px;">
+              <span><strong class="corporate-label">Helpline:</strong> <span id="bannerHelpline">+92 21 111-DS-MAINT</span></span>
+              <span><strong class="corporate-label">Email:</strong> <span id="bannerEmail">accounts@dsmaintenance.pk</span></span>
+              <span><strong class="corporate-label">NTN:</strong> <span id="bannerNtn">9028471-4</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="corporate-banner-right">
+          <div id="bannerAuditRef" class="badge badge-info" style="font-size: 11px; margin-bottom: 6px; word-break: break-all;">Ref: DSM/AUDIT/2026/REP-8821</div>
+          <div id="reportPeriodStatusBadge" class="badge badge-success" style="font-size: 12px; padding: 6px 12px; font-weight: 700;">
+            📅 Period: Current Month
+          </div>
+        </div>
+      </div>
+
+      <div class="view-header" style="margin-bottom: 12px;">
+        <div class="view-title-group">
+          <h2>Executive Operational & Financial Statement</h2>
+          <p id="reportPeriodSubtitle">Comprehensive building statement, P&L, gas cylinder logistics, and resident occupancy register.</p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <!-- Dedicated Building Selector for Reports -->
+          <select id="reportBuildingSelector" class="form-select" style="min-width: 220px; font-weight: 600;" onchange="onReportBuildingChange()"></select>
+          <button class="btn btn-success admin-only-report-btn" onclick="directSaveExecutivePDF()">📄 Save PDF to Downloads</button>
+          <button class="btn btn-primary admin-only-report-btn" onclick="directPrintExecutiveReport()">🖨️ Direct Print</button>
+        </div>
+      </div>
+
+      <!-- Comprehensive Report Period & Date Range Filter Toolbar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; background: rgba(15,23,42,0.7); padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.25);">
+        <!-- Quick Presets -->
+        <div style="display: flex; gap: 5px; flex-wrap: wrap; align-items: center;" id="reportPeriodButtonGroup">
+          <button class="date-quick-btn" onclick="setReportPeriodPreset('today')">⚡ Today</button>
+          <button class="date-quick-btn" onclick="setReportPeriodPreset('yesterday')">📅 Yesterday</button>
+          <button class="date-quick-btn" onclick="setReportPeriodPreset('2days')">⏱ Last 2 Days</button>
+          <button class="date-quick-btn" onclick="setReportPeriodPreset('7days')">🗓 Last 7 Days</button>
+          <button class="date-quick-btn active" onclick="setReportPeriodPreset('month')">📊 This Month</button>
+          <button class="date-quick-btn" onclick="setReportPeriodPreset('all')">🌐 All Records</button>
+        </div>
+
+        <!-- Inline Month & Custom Range Controls -->
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <label style="font-size: 11.5px; color: #94a3b8; font-weight: 700;">Month:</label>
+            <select id="reportMonthSelector" class="form-select" style="padding: 4px 8px; font-size: 12px; min-width: 150px;" onchange="onReportMonthSelectorChange()"></select>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 20px;">
+        <div class="kpi-card">
+          <div class="kpi-title">💵 Total Income Collected</div>
+          <div class="kpi-value" id="reportTotalIncome" style="color: #10b981;">PKR 0</div>
+          <div class="kpi-subtext" id="reportCashVsBank">Cash vs Bank Collections</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">💸 Total Building Expenses</div>
+          <div class="kpi-value" id="reportTotalExpense" style="color: #f43f5e;">PKR 0</div>
+          <div class="kpi-subtext">Maintenance, Parts & Utilities</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">📊 Net Operating Surplus</div>
+          <div class="kpi-value" id="reportNetProfit" style="color: #38bdf8;">PKR 0</div>
+          <div class="kpi-subtext">Net Operating Profit Margin</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">🔥 Gas Logistics & Repair Margin</div>
+          <div class="kpi-value" id="reportGasCylinders" style="font-size: 17px; color: #fbbf24;">0 Delivered</div>
+          <div class="kpi-subtext" id="reportRepairProfit">Repair Profit: PKR 0</div>
+        </div>
+      </div>
+
+      <!-- Modern Analytics Visual Graphs & Efficiency Breakdown -->
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 16px; margin-bottom: 20px;">
+        <div class="glass-panel" style="margin-bottom: 0;">
+          <div class="panel-header">
+            <h3>📊 Collections vs Expenses</h3>
+            <span style="font-size: 11.5px; color: #38bdf8;">Visual Margin Analysis</span>
+          </div>
+          <canvas id="reportFinancialComparisonChart"></canvas>
+        </div>
+
+        <div class="glass-panel" style="margin-bottom: 0;">
+          <div class="panel-header">
+            <h3>📈 Daily Income Spike Trend</h3>
+            <span style="font-size: 11.5px; color: #10b981;">Daily Revenue Analytics</span>
+          </div>
+          <canvas id="reportDailyTrendChart"></canvas>
+        </div>
+
+        <div class="glass-panel" style="margin-bottom: 0;">
+          <div class="panel-header">
+            <h3>🏢 Portfolio Occupancy</h3>
+            <span style="font-size: 11.5px; color: #94a3b8;">Owner vs Tenant vs Vacant</span>
+          </div>
+          <canvas id="reportOccupancyDonutChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart Explanation & Guide Box -->
+      <div class="glass-panel" style="margin-bottom: 20px; padding: 14px 18px; border-left: 4px solid #38bdf8; background: rgba(15, 23, 42, 0.6);">
+        <div style="font-weight: 700; font-size: 13.5px; color: #38bdf8; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <span>📊 Monthly Report Chart Guide & Axis Explanation</span>
+          <span style="font-size: 12px; color: #fbbf24; font-weight: normal;">(ڈایاگرام اور X-Y ایکسس کی آسان اردو وضاحت)</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 12px; line-height: 1.6; color: #cbd5e1;">
+          <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-weight: bold; color: #38bdf8; margin-bottom: 4px;">📈 Financial Comparison Chart (مالیاتی موازنہ چارٹ)</div>
+            <div>• <strong style="color: #f8fafc;">Y-Axis ( ⬆️ عمودی لائن ):</strong> Shows Amount in PKR / رقم کی مقدار (روپے میں).</div>
+            <div>• <strong style="color: #f8fafc;">X-Axis ( ➡️ افقی لائن ):</strong> Shows Financial Categories / تین اہم زمرے:</div>
+            <div style="padding-left: 12px; margin-top: 4px;">
+              <span style="color: #38bdf8; font-weight: bold;">1. Blue Bar (وصولیاں):</span> Total income collected / تمام انوائسز و گیس کی وصولی.<br/>
+              <span style="color: #f43f5e; font-weight: bold;">2. Red Bar (اخراجات):</span> Total operating expenses / سروس و مرمت کے کل اخراجات.<br/>
+              <span style="color: #10b981; font-weight: bold;">3. Green Bar (خالص بچت):</span> Net profit margin / اخراجات کے بعد کی خالص بچت.
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-weight: bold; color: #fbbf24; margin-bottom: 4px;">🏢 Occupancy Breakdown Donut (رہائشی کیٹیگریز)</div>
+            <div>• <strong style="color: #f8fafc;">Total Center Figure:</strong> Total registered apartments / کل فلیٹس کی تعداد.</div>
+            <div>• <strong style="color: #38bdf8;">Blue Segment (مالک مقیم):</strong> Owner Living flats / جن میں مالک خود مقیم ہیں.</div>
+            <div>• <strong style="color: #10b981;">Green Segment (کرایہ دار):</strong> Active Tenants residing / ایکٹو کرایہ دار.</div>
+            <div>• <strong style="color: #fbbf24;">Yellow Segment (خالی فلیٹس):</strong> Currently Vacant / خالی دستیاب فلیٹس.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consolidated 5-Building Commercial Margin Matrix Panel -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3 id="reportBuildingMatrixHeading">🏢 Consolidated 5-Building Commercial Profitability & Margin Matrix</h3>
+          <span style="font-size: 11.5px; color: #10b981; font-weight: bold;">Multi-Building P&L Statement</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Building Name</th>
+                <th>Gas Sales (PKR)</th>
+                <th>Gas Refill Cost (PKR)</th>
+                <th>Gas Profit (PKR)</th>
+                <th>Repair Revenue (PKR)</th>
+                <th>Parts & Labor Cost (PKR)</th>
+                <th>Repair Profit (PKR)</th>
+                <th>Gross Revenue (PKR)</th>
+                <th>Direct Outflow (PKR)</th>
+                <th>Net Operating Profit (PKR)</th>
+              </tr>
+            </thead>
+            <tbody id="reportBuildingMatrixTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Financial Category Breakdown Panel -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>📊 Revenue & Expense Category Breakdown</h3>
+          <span style="font-size: 11.5px; color: #94a3b8;">Period Financial Statement</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Payment Mode</th>
+                <th>Transaction Count</th>
+                <th>Total Amount (PKR)</th>
+              </tr>
+            </thead>
+            <tbody id="reportCategoryTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Complete Financial Ledger Audit Register (Income & Outflows) -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>📑 Complete Financial Ledger Audit Register (Income Inflows & Outflows)</h3>
+          <span style="font-size: 11.5px; color: #38bdf8; font-weight: bold;">Full Audit Trail of All Transactions (Who Paid, Recipient Name, Date, Notes)</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Entry Date</th>
+                <th>Building Name</th>
+                <th>Flow Type</th>
+                <th>Category</th>
+                <th>Payer / Vendor / Person Name</th>
+                <th>Item / Service Description & Purpose</th>
+                <th>Payment Mode & Ref #</th>
+                <th>Amount (PKR)</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="reportDetailedLedgerTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Apartment Master Occupancy & Active Resident Profile Register -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>👤 Apartment Master Occupancy & Resident Profiles Register</h3>
+          <span style="font-size: 11.5px; color: #38bdf8; font-weight: bold;">Full Resident Dossiers & Contacts</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Flat #</th>
+                <th>Building Name</th>
+                <th>Occupancy Status</th>
+                <th>Property Owner</th>
+                <th>Active Resident Profile & CNIC</th>
+                <th>Emergency Contact</th>
+                <th>Move-in & Lease</th>
+                <th>Family & Vehicles</th>
+              </tr>
+            </thead>
+            <tbody id="reportFlatsTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Vacated Tenant History Archive Register -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3>🏚️ Vacated Resident & Past Tenant History Archive</h3>
+            <span style="font-size: 11.5px; color: #fbbf24; font-weight: bold;">Past Tenancy Audit Register</span>
+          </div>
+          <button class="btn btn-sm btn-secondary" onclick="openPdfActionModal('tenant_history', 'Official Master Tenant History Register')">
+            📄 Export Tenant History PDF
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Flat Number</th>
+                <th>Building Name</th>
+                <th>Tenant Name</th>
+                <th>CNIC Number</th>
+                <th>Mobile Contact</th>
+                <th>Move-in Date</th>
+                <th>Vacated Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="reportVacatedTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Operating Expenses, Technician Labor & Spare Parts Register -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>🛠️ Operating Expenses, Technician Labor & Spare Parts Register</h3>
+          <span style="font-size: 11.5px; color: #f43f5e; font-weight: bold;">Expense Outflow Audit</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Building</th>
+                <th>Vendor / Technician / Recipient</th>
+                <th>Service / Item Description</th>
+                <th>Payment Mode</th>
+                <th>Expense Outflow (PKR)</th>
+              </tr>
+            </thead>
+            <tbody id="reportExpensesTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Gas Distribution & Commercial Refill Profit Analysis Register -->
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>🔥 Gas Cylinder Sales & Commercial Refill Profit Register</h3>
+          <span style="font-size: 11.5px; color: #10b981; font-weight: bold;">Gas Logistics Margin Statement</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Delivery Date</th>
+                <th>Building</th>
+                <th>Location / Unit</th>
+                <th>Customer / Resident Details</th>
+                <th>Transaction Type</th>
+                <th>Empty Bottle Status</th>
+                <th>Billed Rate (PKR)</th>
+                <th>Refinery Refill Cost (PKR)</th>
+                <th>Commercial Net Profit (PKR)</th>
+                <th>Payment Mode</th>
+              </tr>
+            </thead>
+            <tbody id="reportGasTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Executive Signature Block (For PDF & Print) -->
+      <div class="print-footer-block">
+        <div class="print-sig-col">
+          <div class="print-sig-line">Prepared by (Accounts Officer)</div>
+        </div>
+        <div class="print-sig-col">
+          <div class="print-sig-line">Verified by (Operations Manager)</div>
+        </div>
+        <div class="print-sig-col">
+          <div class="print-sig-line">Approved by (Managing Director)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 9: SETTINGS & USER MANAGEMENT (MASTER ADMIN ONLY) -->
+    <section id="view_settings" class="view-section">
+      <div class="view-header">
+        <div class="view-title-group">
+          <h2>System Settings & 5 Receptionists User Accounts</h2>
+          <p>Allot Receptionist user IDs, assign buildings, reset passwords, and configure bank accounts.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="openNewUserModal()">+ Add User Account</button>
+          <button class="btn btn-success" onclick="openNewBankModal()">+ Add Bank Account</button>
+        </div>
+      </div>
+
+      <div class="glass-panel" style="margin-bottom: 20px;">
+        <div class="panel-header">
+          <h3>👥 Receptionist User Accounts & Passwords</h3>
+          <span style="font-size: 11.5px; color: #38bdf8; font-weight: bold;">5 Dedicated Building Names</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Assigned Building</th>
+                <th>Account Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="settingsUsersTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-panel">
+        <div class="panel-header">
+          <h3>🏦 Official DS Maintenance Bank Accounts</h3>
+          <span style="font-size: 11.5px; color: #94a3b8;">Configured for Gas & Dues Transfer Across System</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Bank Name</th>
+                <th>Account Title</th>
+                <th>Account Number</th>
+                <th>IBAN</th>
+                <th>Branch Code</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="settingsBankTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 10: MASTER ADMIN CONSOLE -->
+    <section id="view_admin" class="view-section">
+      
+      <!-- SUB-VIEW 1: 5-BUILDING MASTER OVERVIEW -->
+      <div id="adminMasterOverview">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h2>Master Executive Admin Console</h2>
+            <p id="adminConsolePeriodSubtitle">Consolidated 5-building multi-building analytics. <strong>Click any building card below to open its dedicated analytics cockpit</strong>.</p>
+          </div>
+          <div class="header-actions">
+            <!-- Master Console Quick Date Presets -->
+            <div style="display: flex; gap: 5px; flex-wrap: wrap; align-items: center;" id="adminMasterDateFilterButtonGroup">
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('today')">⚡ Today</button>
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('yesterday')">📅 Yesterday</button>
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('2days')">⏱ 2 Days</button>
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('7days')">🗓 7 Days</button>
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('month')">📊 Month</button>
+              <button class="date-quick-btn" onclick="setAdminMasterDateFilter('all')">🌐 All Records</button>
+              <button class="btn btn-sm btn-success" style="margin-left: 6px; font-weight: 700;" onclick="directSaveExecutivePDF()">📄 Save PDF</button>
+              <button class="btn btn-sm btn-primary" style="font-weight: 700;" onclick="directPrintExecutiveReport()">🖨️ Direct Print</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Active vs Inactive Status Overview KPI Grid (Interactive Clickable Dossiers) -->
+        <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 16px;">
+          <div class="kpi-card interactive-kpi-card" onclick="openMasterActiveNodesDossier()" style="border-left: 3px solid #10b981; cursor: pointer;" title="Click to open 5-Building Live Operations & Sync Hub Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🏢 Active Building Names</span>
+              <span class="dossier-pill-badge" style="font-size: 10px;">🔍 Multi-Site Dossier</span>
+            </div>
+            <div class="kpi-value" id="masterKpiActiveBuildings" style="color: #10b981;">0</div>
+            <div class="kpi-subtext" id="masterKpiBuildingsSubtext">0 Active • 0 Inactive / Standby</div>
+          </div>
+
+          <div class="kpi-card interactive-kpi-card" onclick="openMasterFlatsOccupancyDossier()" style="border-left: 3px solid #38bdf8; cursor: pointer;" title="Click to open 5-Building Active vs Inactive Flats Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🏠 Active vs Inactive Flats</span>
+              <span class="dossier-pill-badge" style="font-size: 10px;">🔍 Multi-Site Dossier</span>
+            </div>
+            <div class="kpi-value" id="masterKpiActiveFlats" style="color: #38bdf8;">0</div>
+            <div class="kpi-subtext" id="masterKpiFlatsSubtext">0 Active Occupied • 0 Inactive / Vacant</div>
+          </div>
+
+          <div class="kpi-card interactive-kpi-card" onclick="openMasterGasLogisticsDossier()" style="border-left: 3px solid #fbbf24; cursor: pointer;" title="Click to open 5-Building Gas Reserves, Sales & Thermal Receipts Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🔥 Active Cylinders & Reserves</span>
+              <span class="dossier-pill-badge" style="font-size: 10px;">🔍 Multi-Site Dossier</span>
+            </div>
+            <div class="kpi-value" id="masterKpiActiveGas" style="color: #fbbf24;">0</div>
+            <div class="kpi-subtext" id="masterKpiGasSubtext">Active in resident flats</div>
+          </div>
+
+          <div class="kpi-card interactive-kpi-card" onclick="openMasterStaffMaidsDossier()" style="border-left: 3px solid #34d399; cursor: pointer;" title="Click to open 5-Building Bahria Karachi Verified Domestic Staff & Maids Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🧹 Active Staff on Duty</span>
+              <span class="dossier-pill-badge" style="font-size: 10px;">🔍 Multi-Site Dossier</span>
+            </div>
+            <div class="kpi-value" id="masterKpiActiveStaff" style="color: #34d399;">0</div>
+            <div class="kpi-subtext" id="masterKpiStaffSubtext">0 Maids on duty across buildings</div>
+          </div>
+        </div>
+
+        <!-- Active vs Inactive Building Filter Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; background: rgba(15,23,42,0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.2);">
+          <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 12px; color: #cbd5e1; font-weight: 700; margin-right: 4px;">⚡ Filter Buildings:</span>
+            <button id="adminBuildingFilterAll" class="date-quick-btn active" onclick="setAdminBuildingStatusFilter('ALL')">🌐 All Buildings (5)</button>
+            <button id="adminBuildingFilterActive" class="date-quick-btn" onclick="setAdminBuildingStatusFilter('ACTIVE')">🟢 Active Buildings Only</button>
+            <button id="adminBuildingFilterInactive" class="date-quick-btn" onclick="setAdminBuildingStatusFilter('INACTIVE')">⚪ Inactive / Standby</button>
+          </div>
+          <div style="font-size: 11.5px; color: #94a3b8;" id="adminBuildingFilterCountBadge">
+            Showing all 5 buildings
+          </div>
+        </div>
+
+        <!-- 5 Interactive Clickable Building Cards -->
+        <div class="kpi-grid" id="adminBuildingCards" style="margin-bottom: 20px;"></div>
+
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; margin-bottom: 20px;">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h3>🏢 5-Building Revenue vs Expense Comparison</h3>
+              <span style="font-size: 11.5px; color: #94a3b8;">Consolidated P&L</span>
+            </div>
+            <canvas id="adminMasterRevenueChart"></canvas>
+          </div>
+
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h3>🍩 Revenue Breakdown by Category</h3>
+              <span style="font-size: 11.5px; color: #94a3b8;">All 5 Buildings</span>
+            </div>
+            <canvas id="adminCategoryDonutChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Drag and Drop Zone -->
+        <div class="glass-panel" style="margin-bottom: 20px;">
+          <div class="panel-header">
+            <h3>⚡ WhatsApp & USB Zero-Conflict Sync Hub (.dsmync)</h3>
+            <span style="font-size: 11.5px; color: #38bdf8; font-weight: bold;">Atomic Merge Pipeline</span>
+          </div>
+
+          <div class="dropzone" id="syncDropzone" onclick="document.getElementById('syncFileInput').click()">
+            <div class="dropzone-icon" style="font-size: 36px; margin-bottom: 8px;">📥</div>
+            <h4 style="color: #fff; font-size: 15px; margin-bottom: 4px;">Drag & Drop .dsmync Snapshot File Here</h4>
+            <p style="color: #94a3b8; font-size: 12px;">Or click to browse from WhatsApp downloads or USB drive.</p>
+            <input type="file" id="syncFileInput" style="display: none;" accept=".dsmync" onchange="if(this.files.length) DSSync.importSyncFile(this.files[0])" />
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <div class="panel-header">
+            <h3>📜 Synchronization Audit Trail</h3>
+            <span style="font-size: 11.5px; color: #94a3b8;">History of Imports & Exports</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Building</th>
+                  <th>Action Type</th>
+                  <th>Snapshot Filename</th>
+                  <th>Rows / Media Synced</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="syncLogsTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-VIEW 2: SPECIFIC BUILDING DRILL-DOWN COCKPIT -->
+      <div id="adminBuildingDetailView" style="display: none;">
+        <div class="view-header" style="border-bottom: 1px solid rgba(56,189,248,0.3); padding-bottom: 12px; margin-bottom: 16px;">
+          <div class="view-title-group">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="btn btn-secondary" onclick="closeAdminBuildingDetail()">⬅ Back to All Buildings Overview</button>
+              <h2 id="drilldownBuildingTitle" style="color: #38bdf8; font-size: 19px;">Building 01 [Ocean Tower]</h2>
+            </div>
+            <p id="drilldownBuildingSubtitle" style="margin-top: 4px;">Interactive live operations, financial margin analysis & resident register.</p>
+          </div>
+          <div class="header-actions">
+            <!-- Drilldown Quick Date Presets -->
+            <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+              <button class="date-quick-btn" onclick="setDrilldownDateFilter('today')">⚡ Today</button>
+              <button class="date-quick-btn" onclick="setDrilldownDateFilter('yesterday')">📅 Yesterday</button>
+              <button class="date-quick-btn" onclick="setDrilldownDateFilter('2days')">⏱ 2 Days</button>
+              <button class="date-quick-btn" onclick="setDrilldownDateFilter('7days')">🗓 7 Days</button>
+              <button class="date-quick-btn" onclick="setDrilldownDateFilter('month')">📊 Month</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drilldown KPI Grid (Clickable to open detailed dossiers) -->
+        <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 20px;">
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('flats')" title="Click to view Apartments & Occupancy Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🏢 Total Apartments</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiFlats">0</div>
+            <div class="kpi-subtext" id="drilldownKpiFlatsBreakdown">0 Owner • 0 Tenant • 0 Vacant</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('visitors')" title="Click to view Visitors & Security Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>👥 Period Visitors</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiVisitors" style="color: #38bdf8;">0</div>
+            <div class="kpi-subtext" id="drilldownKpiVisitorsInside">0 Inside Now</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('gas')" title="Click to view Gas Inventory & Cylinders Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🔥 Gas Stock & Delivered</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiGas" style="color: #fbbf24;">0 Delivered</div>
+            <div class="kpi-subtext" id="drilldownKpiGasStock">Reserve Stock: 0</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('staff')" title="Click to view Domestic Staff & Verified Maids Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>🧹 Domestic Staff</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiStaff" style="color: #34d399;">0 on Duty</div>
+            <div class="kpi-subtext" id="drilldownKpiStaffTotal">Bahria Verified Staff</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('finance')" title="Click to view Financial Ledger Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>💵 Collections</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiIncome" style="color: #10b981;">PKR 0</div>
+            <div class="kpi-subtext" id="drilldownKpiCashBank">Cash vs Bank</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('finance')" title="Click to view Financial Ledger Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>💸 Expenses</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiExpense" style="color: #f43f5e;">PKR 0</div>
+            <div class="kpi-subtext">Operating Outflow</div>
+          </div>
+          <div class="kpi-card interactive-kpi-card" onclick="openDrilldownDossier('finance')" title="Click to view Financial Ledger Dossier">
+            <div class="kpi-title" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>📊 Net Margin</span>
+              <span class="dossier-pill-badge">🔍 Dossier</span>
+            </div>
+            <div class="kpi-value" id="drilldownKpiNetProfit" style="color: #38bdf8;">PKR 0</div>
+            <div class="kpi-subtext" id="drilldownKpiRepairProfit">Repair Profit: PKR 0</div>
+          </div>
+        </div>
+
+        <!-- Drilldown Visual Charts -->
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 20px;">
+          <div class="glass-panel" style="margin-bottom: 0;">
+            <div class="panel-header">
+              <h3>📈 Building Financial Flow (Collections vs Expenses vs Net Profit)</h3>
+              <span style="font-size: 11.5px; color: #38bdf8;">Building Specific P&L</span>
+            </div>
+            <canvas id="drilldownFinancialChart"></canvas>
+          </div>
+
+          <div class="glass-panel" style="margin-bottom: 0;">
+            <div class="panel-header">
+              <h3>🍩 Building Occupancy Distribution</h3>
+              <span style="font-size: 11.5px; color: #94a3b8;">Resident Distribution</span>
+            </div>
+            <canvas id="drilldownOccupancyChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Drilldown Flats Registry Table -->
+        <div class="glass-panel" style="margin-bottom: 20px;">
+          <div class="panel-header">
+            <h3>🏢 Building Apartment Registry & Resident Status</h3>
+            <span style="font-size: 11.5px; color: #94a3b8;" id="drilldownFlatsCountBadge">All Flats</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Flat #</th>
+                  <th>Floor / Wing</th>
+                  <th>BHK Type</th>
+                  <th>Occupancy Mode</th>
+                  <th>Resident Name / Contact</th>
+                  <th>Monthly Rent / Rate</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="drilldownFlatsTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Drilldown Recent Cash Ledger Table -->
+        <div class="glass-panel">
+          <div class="panel-header">
+            <h3>💰 Building Transaction History (Ledger)</h3>
+            <span style="font-size: 11.5px; color: #94a3b8;">Period Activity</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th>Notes</th>
+                  <th>Mode</th>
+                  <th>Amount</th>
+                  <th>Person</th>
+                </tr>
+              </thead>
+              <tbody id="drilldownLedgerTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       4. INTERACTIVE YEAR / MONTH / DAY VISUAL CALENDAR MODAL (2020-2035)
+       ======================================================================== -->
+  <div id="calendarWidgetModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3>📅 Interactive Visual Calendar & Date Filter</h3>
+        <button class="modal-close-btn" onclick="closeModal('calendarWidgetModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Quick Presets -->
+        <div class="cal-presets-row">
+          <button class="cal-preset-pill active" data-preset="today" onclick="setDateFilterPreset('today', this)">⚡ Today</button>
+          <button class="cal-preset-pill" data-preset="yesterday" onclick="setDateFilterPreset('yesterday', this)">📅 Yesterday</button>
+          <button class="cal-preset-pill" data-preset="2days" onclick="setDateFilterPreset('2days', this)">⏱ Last 2 Days</button>
+          <button class="cal-preset-pill" data-preset="7days" onclick="setDateFilterPreset('7days', this)">🗓 Last 7 Days</button>
+          <button class="cal-preset-pill" data-preset="month" onclick="setDateFilterPreset('month', this)">📊 This Month</button>
+          <button class="cal-preset-pill" data-preset="all" onclick="setDateFilterPreset('all', this)">🔄 All Records</button>
+        </div>
+
+        <!-- Year & Month Selector Controls (2020-2035) -->
+        <div class="cal-header-controls">
+          <button type="button" class="cal-nav-arrow" onclick="changeCalMonth(-1)">◀</button>
+          <div class="cal-dropdown-selectors">
+            <select id="calMonthSelect" class="cal-select" onchange="onCalMonthChange()"></select>
+            <select id="calYearSelect" class="cal-select" onchange="onCalYearChange()"></select>
+          </div>
+          <button type="button" class="cal-nav-arrow" onclick="changeCalMonth(1)">▶</button>
+        </div>
+
+        <!-- Weekdays Header -->
+        <div class="cal-grid-weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+
+        <!-- Days Grid -->
+        <div id="calDaysGrid" class="cal-days-grid"></div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+        <button type="button" class="btn btn-primary" onclick="applyCalSelectedMonth()">📊 Filter by Selected Month</button>
+        <button type="button" class="btn btn-secondary" onclick="closeModal('calendarWidgetModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       5. COMPREHENSIVE MODALS (WITH EDIT & PRIVACY PROTECTION)
+       ======================================================================== -->
+
+  <!-- Modal: Master Admin Add New Apartment -->
+  <div id="addNewFlatModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>🏢 Register New Apartment Dossier (Master Admin)</h3>
+        <button class="modal-close-btn" onclick="closeModal('addNewFlatModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveNewFlat(event)">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Target Building Name *</label>
+              <select id="newFlatBuildingId" class="form-select" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Apartment / Flat Number *</label>
+              <input type="text" id="newFlatNumber" class="form-input" placeholder="e.g. 101, 202, 1204" required />
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Floor Number *</label>
+              <input type="number" id="newFlatFloor" class="form-input" value="1" min="0" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Wing / Block *</label>
+              <input type="text" id="newFlatWing" class="form-input" value="Wing A" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">BHK / Unit Type</label>
+              <select id="newFlatBhk" class="form-select">
+                <option value="3-Bed Luxury">3-Bed Luxury</option>
+                <option value="2-Bed Executive">2-Bed Executive</option>
+                <option value="4-Bed Penthouse">4-Bed Penthouse</option>
+                <option value="Studio Apartment">Studio Apartment</option>
+                <option value="Commercial Shop">Commercial Shop</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Initial Occupancy Status *</label>
+            <select id="newFlatOccupancy" class="form-select" style="font-weight: 600;">
+              <option value="Vacant">🚪 Vacant / Inactive (Empty Flat)</option>
+              <option value="Owner Occupied">🏠 Owner Occupied (Owner Living - Active)</option>
+              <option value="Rented">👤 Rented (Tenant Occupied - Active)</option>
+            </select>
+          </div>
+
+          <h4 style="color: #38bdf8; font-size: 13.5px; margin: 14px 0 8px;">Property Owner Personal Dossier</h4>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Owner Full Name</label>
+              <input type="text" id="newFlatOwnerName" class="form-input" placeholder="e.g. Haji Muhammad Rafiq" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Owner Contact Mobile #</label>
+              <input type="text" id="newFlatOwnerPhone" class="form-input" placeholder="0300-1234567" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Owner CNIC Number</label>
+              <input type="text" id="newFlatOwnerCnic" class="form-input" placeholder="42101-xxxxxxx-x" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Owner Email Address</label>
+              <input type="email" id="newFlatOwnerEmail" class="form-input" placeholder="owner@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Permanent / Emergency Address</label>
+              <input type="text" id="newFlatOwnerAddress" class="form-input" placeholder="Permanent residence address" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Apartment Notes</label>
+            <textarea id="newFlatNotes" class="form-textarea" rows="2" placeholder="e.g. Park facing, corner flat..."></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('addNewFlatModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save & Register Flat</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Flat & Owner Profile -->
+  <div id="editFlatModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>Edit Apartment & Occupancy Status</h3>
+        <button class="modal-close-btn" onclick="closeModal('editFlatModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveEditFlat(event)">
+          <input type="hidden" id="editFlatId" />
+          <input type="hidden" id="editFlatBuildingId" />
+
+          <h4 style="color: #38bdf8; font-size: 13.5px; margin-bottom: 8px;">Apartment Attributes</h4>
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Flat Number *</label>
+              <input type="text" id="editFlatNumber" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Floor Number</label>
+              <input type="number" id="editFlatFloor" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Wing / Block</label>
+              <input type="text" id="editFlatWing" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">BHK / Unit Type</label>
+              <select id="editFlatBhk" class="form-select">
+                <option value="3-Bed Luxury">3-Bed Luxury</option>
+                <option value="2-Bed Executive">2-Bed Executive</option>
+                <option value="4-Bed Penthouse">4-Bed Penthouse</option>
+                <option value="Studio Apartment">Studio Apartment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Occupancy Status *</label>
+              <select id="editFlatOccupancy" class="form-select" style="font-weight: 600;">
+                <option value="Owner Occupied">🏠 Owner Occupied (Owner Living - Active)</option>
+                <option value="Rented">👤 Rented (Tenant Occupied - Active)</option>
+                <option value="Vacant">🚪 Vacant / Inactive (Empty Flat)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Receptionist Privacy Notice -->
+          <div id="editOwnerPrivacyNotice" style="display: none; background: rgba(15, 23, 42, 0.7); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px; margin: 12px 0;"></div>
+
+          <!-- Admin Only Owner Personal Fields -->
+          <div id="editOwnerFieldsSection">
+            <h4 style="color: #38bdf8; font-size: 13.5px; margin: 14px 0 8px;">Property Owner Personal Dossier (Admin Only)</h4>
+            <div class="form-row-3">
+              <div class="form-group">
+                <label class="form-label">Owner Full Name</label>
+                <input type="text" id="editFlatOwnerName" class="form-input" placeholder="Owner Name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Owner Contact #</label>
+                <input type="text" id="editFlatOwnerPhone" class="form-input" placeholder="0300-1234567" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Owner CNIC #</label>
+                <input type="text" id="editFlatOwnerCnic" class="form-input" placeholder="42101-xxxxxxx-x" />
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Owner Email Address</label>
+                <input type="email" id="editFlatOwnerEmail" class="form-input" placeholder="owner@email.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Permanent / Emergency Address</label>
+                <input type="text" id="editFlatOwnerAddress" class="form-input" placeholder="Full residential address" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Additional Notes</label>
+            <textarea id="editFlatNotes" class="form-textarea" rows="2"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('editFlatModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Flat Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Assign / Edit Resident Profile (With Photo Capture & Complete Details) -->
+  <div id="assignTenantModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 id="assignTenantFlatTitle">👤 Register Resident / Tenant Profile</h3>
+        <button class="modal-close-btn" onclick="closeModal('assignTenantModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveTenant(event)">
+          <input type="hidden" id="assignTenantFlatId" />
+          <input type="hidden" id="assignTenantBuildingId" />
+          <input type="hidden" id="assignTenantId" />
+          <input type="hidden" id="assignTenantPhotoFilename" />
+          <input type="hidden" id="assignTenantDocumentFilename" />
+
+          <!-- Apartment Selection Dropdown -->
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label">Select Building Apartment / Flat *</label>
+            <select id="assignTenantFlatSelect" class="form-select" onchange="onAssignTenantFlatSelectChange(this.value)" required>
+              <option value="">-- Choose Apartment --</option>
+            </select>
+          </div>
+
+          <!-- Tenant Photo Capture & Upload Box -->
+          <div class="glass-panel" style="margin-bottom: 16px; padding: 14px; background: rgba(15, 23, 42, 0.6); border: 1px solid #334155;">
+            <h4 style="color: #38bdf8; font-size: 13.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              📷 Tenant Identification Photo
+            </h4>
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+              <div style="width: 85px; height: 85px; border-radius: 8px; overflow: hidden; border: 2px solid #38bdf8; background: #0f172a; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                <img id="assignTenantPhotoPreview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='85' height='85' viewBox='0 0 24 24' fill='%2364748b'><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/></svg>" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <button type="button" class="btn btn-sm btn-primary" onclick="startWebcam('assignTenantPhotoPreview', 'assignTenantPhotoFilename')">
+                    📷 Live Webcam Photo
+                  </button>
+                  <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('assignTenantFileInput').click()">
+                    📁 Upload Photo File
+                  </button>
+                  <input type="file" id="assignTenantFileInput" accept="image/*" style="display: none;" onchange="handleTenantPhotoFileUpload(event)" />
+                </div>
+                <div style="font-size: 11px; color: #94a3b8;">
+                  Snap live photo at reception desk or upload tenant profile photo.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Document Scanner / Attachment Box (CNIC / Agreement) -->
+          <div class="document-scanner-box">
+            <div class="scanner-controls-row">
+              <span style="font-weight: 700; font-size: 12.5px; color: #38bdf8; display: flex; align-items: center; gap: 6px;">
+                📄 Scanned Document (CNIC / Tenancy Agreement)
+              </span>
+              <div class="scanner-btn-group">
+                <button type="button" class="btn btn-sm btn-primary" onclick="triggerHardwareScan('assignTenantDocumentFilename', 'assignTenantDocPreview', 'assignTenantDocInfo', 'assignTenantDocPreviewContainer')">
+                  📠 Direct Hardware Scanner
+                </button>
+                <button type="button" class="btn btn-sm btn-info" onclick="openDocumentCameraModal('assignTenantDocumentFilename', 'assignTenantDocPreview', 'assignTenantDocInfo', 'assignTenantDocPreviewContainer')">
+                  📷 Camera Scanner
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('assignTenantDocFileInput').click()">
+                  📁 Attach Scanned File
+                </button>
+                <input type="file" id="assignTenantDocFileInput" accept="image/*,.pdf" style="display: none;" onchange="handleDocFileUpload(event, 'assignTenantDocumentFilename', 'assignTenantDocPreview', 'assignTenantDocInfo', 'assignTenantDocPreviewContainer')" />
+              </div>
+            </div>
+            
+            <div id="assignTenantDocPreviewContainer" class="scanner-preview-container" style="display: none;">
+              <img id="assignTenantDocPreview" class="scanner-thumb" src="" onclick="viewDocumentModal(document.getElementById('assignTenantDocumentFilename').value)" title="Click to view full size" />
+              <div class="scanner-doc-info" id="assignTenantDocInfo">
+                <div>Document attached</div>
+              </div>
+              <button type="button" class="btn btn-sm btn-danger" onclick="clearScannedDoc('assignTenantDocumentFilename', 'assignTenantDocPreviewContainer')" style="padding: 2px 8px; font-size: 11px;">✕ Remove</button>
+            </div>
+          </div>
+
+          <h4 style="color: #38bdf8; font-size: 13.5px; margin-bottom: 8px;">Primary Tenant Personal Information</h4>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Tenant Full Name *</label>
+              <input type="text" id="assignTenantName" class="form-input" placeholder="Enter full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CNIC Number * (e.g. 42101-1234567-1)</label>
+              <input type="text" id="assignTenantCnic" class="form-input" placeholder="13-digit CNIC" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Primary Mobile # * (e.g. 0300-1234567)</label>
+              <input type="text" id="assignTenantPhone" class="form-input" placeholder="Primary contact" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Emergency Contact #</label>
+              <input type="text" id="assignTenantEmergency" class="form-input" placeholder="Emergency relative / friend" />
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Move-in Date</label>
+              <div class="date-input-group">
+                <input type="date" id="assignTenantMoveIn" class="form-input" />
+                <button type="button" class="date-quick-btn" onclick="setModalDate('assignTenantMoveIn', 0)">⚡ Today</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Lease Tenure (Months)</label>
+              <input type="number" id="assignTenantLeaseTenure" class="form-input" value="12" min="1" max="120" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Profession / Work Notes</label>
+              <input type="text" id="assignTenantProfession" class="form-input" placeholder="e.g. Business / Software Engineer" />
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin: 14px 0 6px;">
+            <h4 style="color: #38bdf8; font-size: 13.5px;">Resident Family Members Registry</h4>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="addFamilyMemberRow()">+ Add Member</button>
+          </div>
+          <div id="assignFamilyContainer"></div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin: 14px 0 6px;">
+            <h4 style="color: #38bdf8; font-size: 13.5px;">Vehicle Parking Bay Allotment</h4>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="addVehicleRow()">+ Add Vehicle</button>
+          </div>
+          <div id="assignVehicleContainer"></div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('assignTenantModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">💾 Save Resident Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Vacate Flat -->
+  <div id="vacateTenantModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="vacateFlatTitle">Vacate Apartment</h3>
+        <button class="modal-close-btn" onclick="closeModal('vacateTenantModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleConfirmVacate(event)">
+          <input type="hidden" id="vacateFlatId" />
+          <p style="font-size: 12.5px; color: #cbd5e1; margin-bottom: 12px;">
+            This will archive the tenant profile, family list, vehicles, and payment totals into the <strong>Permanent Historical Tenant Timeline</strong> for this flat.
+          </p>
+          <div class="form-group">
+            <label class="form-label">Vacated Date</label>
+            <div class="date-input-group">
+              <input type="date" id="vacateDate" class="form-input" required />
+              <button type="button" class="date-quick-btn" onclick="setModalDate('vacateDate', 0)">⚡ Today</button>
+              <button type="button" class="date-quick-btn" onclick="setModalDate('vacateDate', -1)">📅 Yesterday</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Reason / Notes</label>
+            <textarea id="vacateReason" class="form-textarea" rows="2"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('vacateTenantModal')">Cancel</button>
+            <button type="submit" class="btn btn-danger">Confirm & Archive</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Visitor Entry / Edit -->
+  <div id="newVisitorModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Visitor / Guest Verification</h3>
+        <button class="modal-close-btn" onclick="closeModal('newVisitorModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveVisitor(event)">
+          <input type="hidden" id="visitorId" />
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Target Flat Number *</label>
+              <input type="text" id="visitorFlatNumber" class="form-input" placeholder="e.g. 101" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Visitor Full Name *</label>
+              <input type="text" id="visitorGuestName" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Contact Number</label>
+              <input type="text" id="visitorContact" class="form-input" placeholder="0300-1234567" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CNIC Number</label>
+              <input type="text" id="visitorCnic" class="form-input" placeholder="42101-xxxxxxx-x" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Purpose of Visit</label>
+              <input type="text" id="visitorPurpose" class="form-input" value="Family Guest" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Entry Date & Time</label>
+              <div class="date-input-group">
+                <input type="text" id="visitorEntryTime" class="form-input" />
+                <button type="button" class="date-quick-btn" onclick="setModalDate('visitorEntryTime', 0, true)">⚡ Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Headcount / Family Members Details -->
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
+              <span>👥 Total Persons (Headcount) *</span>
+              <span style="font-size: 11px; color: #38bdf8;">Kitnay afrad aye hain?</span>
+            </label>
+            <div style="display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap;">
+              <button type="button" class="date-quick-btn active" onclick="setVisitorHeadcount(1)" id="btnHeadcount1">👤 Solo (1)</button>
+              <button type="button" class="date-quick-btn" onclick="setVisitorHeadcount(2)" id="btnHeadcount2">👥 Couple (2)</button>
+              <button type="button" class="date-quick-btn" onclick="setVisitorHeadcount(3)" id="btnHeadcount3">👨‍👩‍👧 Family (3)</button>
+              <button type="button" class="date-quick-btn" onclick="setVisitorHeadcount(4)" id="btnHeadcount4">👨‍👩‍👧‍👦 Family (4)</button>
+              <button type="button" class="date-quick-btn" onclick="setVisitorHeadcount(5)" id="btnHeadcount5">👥 Group (5+)</button>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <input type="number" id="visitorTotalPersons" class="form-input" min="1" max="99" value="1" style="width: 100px;" oninput="onVisitorHeadcountChange(this.value)" required />
+              <span style="font-size: 11px; color: #94a3b8;" id="visitorHeadcountHint">Single visitor entering alone</span>
+            </div>
+          </div>
+
+          <!-- Accompanying Family / Guests Details -->
+          <div class="form-group" id="visitorAccompanyingGroup" style="margin-bottom: 12px; display: none;">
+            <label class="form-label">👨‍👩‍👧 Accompanying Family / Guests Details</label>
+            <textarea id="visitorAccompanyingDetails" class="form-textarea" rows="2" placeholder="e.g. Wife, 2 Children (Ahmed, Sara), or Father & Brother"></textarea>
+            <small style="color: #94a3b8; font-size: 10.5px;">Sath anay walay afrad ke naam, rishta ya CNIC likhein.</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Visitor Photo Capture / Upload</label>
+            <input type="hidden" id="visitorPhotoData" />
+            <input type="hidden" id="visitorDocumentFilename" />
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 6px;">
+              <button type="button" class="btn btn-sm btn-primary" onclick="startWebcam('visitorPhotoPreview', 'visitorPhotoData')">📷 Live Camera</button>
+              <input type="file" id="visitorFileInput" accept="image/*" style="font-size: 11.5px;" onchange="handleImageFileInput(this, 'visitorPhotoData', 'visitorPhotoPreview')" />
+            </div>
+            <img id="visitorPhotoPreview" style="display: none; width: 95px; height: 95px; object-fit: cover; border-radius: 8px; border: 1px solid #38bdf8;" />
+          </div>
+
+          <!-- Document Scanner / Attachment Box (CNIC / Pass) -->
+          <div class="document-scanner-box">
+            <div class="scanner-controls-row">
+              <span style="font-weight: 700; font-size: 12px; color: #38bdf8; display: flex; align-items: center; gap: 6px;">
+                📄 Scanned CNIC / ID Document
+              </span>
+              <div class="scanner-btn-group">
+                <button type="button" class="btn btn-sm btn-primary" onclick="triggerHardwareScan('visitorDocumentFilename', 'visitorDocPreview', 'visitorDocInfo', 'visitorDocPreviewContainer')">
+                  📠 Direct Scanner
+                </button>
+                <button type="button" class="btn btn-sm btn-info" onclick="openDocumentCameraModal('visitorDocumentFilename', 'visitorDocPreview', 'visitorDocInfo', 'visitorDocPreviewContainer')">
+                  📷 Camera Scanner
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('visitorDocFileInput').click()">
+                  📁 Attach File
+                </button>
+                <input type="file" id="visitorDocFileInput" accept="image/*,.pdf" style="display: none;" onchange="handleDocFileUpload(event, 'visitorDocumentFilename', 'visitorDocPreview', 'visitorDocInfo', 'visitorDocPreviewContainer')" />
+              </div>
+            </div>
+            
+            <div id="visitorDocPreviewContainer" class="scanner-preview-container" style="display: none;">
+              <img id="visitorDocPreview" class="scanner-thumb" src="" onclick="viewDocumentModal(document.getElementById('visitorDocumentFilename').value)" title="Click to view full size" />
+              <div class="scanner-doc-info" id="visitorDocInfo">
+                <div>Document attached</div>
+              </div>
+              <button type="button" class="btn btn-sm btn-danger" onclick="clearScannedDoc('visitorDocumentFilename', 'visitorDocPreviewContainer')" style="padding: 2px 8px; font-size: 11px;">✕ Remove</button>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newVisitorModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Guest Record</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Register / Edit Domestic Staff -->
+  <div id="newStaffModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Bahria Verified Domestic Staff Dossier</h3>
+        <button class="modal-close-btn" onclick="closeModal('newStaffModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveStaff(event)">
+          <input type="hidden" id="staffId" />
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="staffFullName" class="form-input" required />
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">CNIC Number *</label>
+              <input type="text" id="staffCnic" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Bahria Town Reg / Card # *</label>
+              <input type="text" id="staffBahriaCard" class="form-input" placeholder="e.g. BTK-REG-2026-XXXX" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Role Category</label>
+              <select id="staffRoleType" class="form-select">
+                <option value="Maid & Cleaner">Maid & Cleaner</option>
+                <option value="Cook">Cook</option>
+                <option value="Driver">Driver</option>
+                <option value="Babysitter">Babysitter</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Phone</label>
+              <input type="text" id="staffPhone" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Associated Flats Served (e.g. 101, 102, 304)</label>
+            <input type="text" id="staffAssociatedFlats" class="form-input" />
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newStaffModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Staff Record</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Gas Cylinder Delivery / Edit -->
+  <div id="newGasDeliveryModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Gas Cylinder Delivery & Split Payment</h3>
+        <button class="modal-close-btn" onclick="closeModal('newGasDeliveryModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveGasDelivery(event)">
+          <input type="hidden" id="gasDeliveryId" />
+          
+          <div class="form-group">
+            <label class="form-label">Gas Transaction Type *</label>
+            <select id="gasTransactionType" class="form-select" onchange="onGasTransactionTypeChange()">
+              <option value="REFILL">🔄 Gas Refill Exchange (Empty Return + Gas Delivery)</option>
+              <option value="NEW_PURCHASE">✨ New Cylinder Purchase (Brand New Complete Bottle + Gas)</option>
+            </select>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Flat Number *</label>
+              <input type="text" id="gasFlatNumber" class="form-input" placeholder="e.g. 101" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Quantity</label>
+              <input type="number" id="gasQuantity" class="form-input" value="1" min="1" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Unit Rate (PKR)</label>
+              <input type="number" id="gasUnitPrice" class="form-input" value="3450" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Delivery Date & Time</label>
+            <div class="date-input-group">
+              <input type="text" id="gasDeliveryDate" class="form-input" />
+              <button type="button" class="date-quick-btn" onclick="setModalDate('gasDeliveryDate', 0, true)">⚡ Now</button>
+              <button type="button" class="date-quick-btn" onclick="setModalDate('gasDeliveryDate', -1, true)">📅 Yesterday</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Split Payment Mode *</label>
+            <select id="gasPaymentMode" class="form-select" onchange="toggleGasPaymentMode()">
+              <option value="HAND_CASH">💵 Hand Cash (Collected by Staff)</option>
+              <option value="BANK_TRANSFER">🏦 Online Bank Transfer (Official DS Bank)</option>
+            </select>
+          </div>
+
+          <div id="gasCashFields" class="form-group">
+            <label class="form-label">Staff Member Who Collected Cash *</label>
+            <input type="text" id="gasCashCollector" class="form-input" value="Ahmed (Floor Staff)" />
+          </div>
+
+          <div id="gasBankFields" style="display: none;">
+            <div class="form-group">
+              <label class="form-label">Official DS Maintenance Bank Account *</label>
+              <select id="gasBankSelect" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Transaction Reference / IBFT ID</label>
+              <input type="text" id="gasTxRef" class="form-input" placeholder="e.g. TXN-99882211" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Upload Bank Transfer Slip / Screenshot</label>
+              <input type="hidden" id="gasSlipData" />
+              <input type="file" accept="image/*" onchange="handleImageFileInput(this, 'gasSlipData')" />
+            </div>
+          </div>
+
+          <div class="form-group" id="gasEmptyReturnedGroup" style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="gasEmptyReturned" checked style="width: 15px; height: 15px;" />
+            <label for="gasEmptyReturned" style="font-size: 12.5px; color: #cbd5e1;">Empty Cylinder Collected & Returned</label>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newGasDeliveryModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save & Generate Receipt</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Repair Job / Edit -->
+  <div id="newRepairJobModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>On-Demand Repair Work Order</h3>
+        <button class="modal-close-btn" onclick="closeModal('newRepairJobModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveRepairJob(event)">
+          <input type="hidden" id="repairJobId" />
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Flat Number *</label>
+              <input type="text" id="repairFlatNumber" class="form-input" placeholder="e.g. 102" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Category</label>
+              <select id="repairCategory" class="form-select">
+                <option value="Plumbing">Plumbing</option>
+                <option value="AC Service">AC Service & Gas</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Carpentry">Carpentry</option>
+                <option value="Masonry">Masonry</option>
+                <option value="Painting">Painting</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Resident / Customer Name</label>
+              <input type="text" id="repairCustomerName" class="form-input" placeholder="Resident Name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Resident Phone Contact</label>
+              <input type="text" id="repairCustomerPhone" class="form-input" placeholder="0300-1234567" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Issue Description *</label>
+            <textarea id="repairIssue" class="form-textarea" rows="2" required></textarea>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Assigned Technician *</label>
+              <input type="text" id="repairTechnician" class="form-input" placeholder="e.g. Rashid Plumber" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Job Date</label>
+              <div class="date-input-group">
+                <input type="date" id="repairDate" class="form-input" />
+                <button type="button" class="date-quick-btn" onclick="setModalDate('repairDate', 0)">⚡ Today</button>
+                <button type="button" class="date-quick-btn" onclick="setModalDate('repairDate', -1)">📅 Yesterday</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Status</label>
+              <select id="repairStatus" class="form-select">
+                <option value="COMPLETED">Completed</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="PENDING">Pending</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="margin-top: 8px; padding: 12px;">
+            <h4 style="color: #38bdf8; font-size: 12.5px; margin-bottom: 6px;">Profit Margin Engine (Net Income)</h4>
+            <div class="form-row-3">
+              <div class="form-group">
+                <label class="form-label">Billed Amount (PKR)</label>
+                <input type="number" id="repairBilledAmount" class="form-input" value="2500" onkeyup="calculateProfitMarginPreview()" onchange="calculateProfitMarginPreview()" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Parts Cost (PKR)</label>
+                <input type="number" id="repairPartsCost" class="form-input" value="500" onkeyup="calculateProfitMarginPreview()" onchange="calculateProfitMarginPreview()" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Labor Cost (PKR)</label>
+                <input type="number" id="repairLaborCost" class="form-input" value="800" onkeyup="calculateProfitMarginPreview()" onchange="calculateProfitMarginPreview()" />
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 6px;">
+              <span style="font-size: 12px; color: #cbd5e1;">Net Profit Margin:</span>
+              <span id="repairProfitPreview" style="font-size: 15px; font-weight: bold; color: #10b981;">PKR 1,200</span>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newRepairJobModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Work Order & Receipt</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Ledger Entry -->
+  <div id="newLedgerModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Record Cash Ledger Transaction</h3>
+        <button class="modal-close-btn" onclick="closeModal('newLedgerModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveLedger(event)">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Entry Date</label>
+              <div class="date-input-group">
+                <input type="date" id="ledgerEntryDate" class="form-input" required />
+                <button type="button" class="date-quick-btn" onclick="setModalDate('ledgerEntryDate', 0)">⚡ Today</button>
+                <button type="button" class="date-quick-btn" onclick="setModalDate('ledgerEntryDate', -1)">📅 Yesterday</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Transaction Type</label>
+              <select id="ledgerType" class="form-select">
+                <option value="EXPENSE">Expense (- Outflow)</option>
+                <option value="INCOME">Income (+ Inflow)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Category</label>
+              <select id="ledgerCategory" class="form-select">
+                <option value="Building Expense">Building Operating Expense</option>
+                <option value="Technician Salary">Technician Salary / Labor</option>
+                <option value="Gas Supply Purchase">Gas Cylinder Purchase / Supply</option>
+                <option value="Spare Parts">Spare Parts / Repair Materials</option>
+                <option value="Utility Bill">Utility Bill (Electricity/Water)</option>
+                <option value="Other">Other Operating Expense</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Amount (PKR) *</label>
+              <input type="number" id="ledgerAmount" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Payment Mode</label>
+              <select id="ledgerPaymentMode" class="form-select">
+                <option value="HAND_CASH">Hand Cash</option>
+                <option value="BANK_TRANSFER">Bank Transfer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Collector / Recipient</label>
+              <input type="text" id="ledgerPerson" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Transaction Notes</label>
+            <textarea id="ledgerNotes" class="form-textarea" rows="2"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newLedgerModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Transaction</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: User Account Edit / Create (Settings) -->
+  <div id="editUserModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Receptionist / User Account Configuration</h3>
+        <button class="modal-close-btn" onclick="closeModal('editUserModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveUser(event)">
+          <input type="hidden" id="settingsUserId" />
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Username *</label>
+              <input type="text" id="settingsUserUsername" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="settingsUserFullName" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Contact Phone</label>
+              <input type="text" id="settingsUserPhone" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <select id="settingsUserRole" class="form-select">
+                <option value="RECEPTIONIST">Receptionist</option>
+                <option value="MANAGER">Building Manager</option>
+                <option value="MASTER_ADMIN">Master Admin</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Assigned Building</label>
+            <select id="settingsUserBuilding" class="form-select"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password (Leave blank to keep unchanged)</label>
+            <input type="password" id="settingsUserPassword" class="form-input" placeholder="New password" />
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('editUserModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save User Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Add Bank Account (Settings) -->
+  <div id="newBankModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Configure Official Bank Account</h3>
+        <button class="modal-close-btn" onclick="closeModal('newBankModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveBank(event)">
+          <div class="form-group">
+            <label class="form-label">Bank Name *</label>
+            <input type="text" id="bankName" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Account Title *</label>
+            <input type="text" id="bankAccountTitle" class="form-input" required />
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Account Number *</label>
+              <input type="text" id="bankAccountNumber" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Branch Code</label>
+              <input type="text" id="bankBranch" class="form-input" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">IBAN Number (Optional)</label>
+            <input type="text" id="bankIban" class="form-input" placeholder="PK..." />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newBankModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Bank Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Maintenance & Other Income Thermal Receipt Preview -->
+  <div id="repairReceiptModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3>🧾 Maintenance & Income Job Receipt</h3>
+        <button class="modal-close-btn" onclick="closeModal('repairReceiptModal')">✕</button>
+      </div>
+      <div style="padding: 10px 16px 0 16px; display: flex; gap: 8px;">
+        <button id="repairReceiptTabClient" class="btn btn-sm btn-primary" style="flex: 1; font-weight: 700; padding: 7px 10px;" onclick="switchRepairReceiptMode('customer')">
+          👤 Client Receipt (Customer Copy)
+        </button>
+        <button id="repairReceiptTabOffice" class="btn btn-sm btn-secondary" style="flex: 1; font-weight: 700; padding: 7px 10px;" onclick="switchRepairReceiptMode('office')">
+          🏢 Office Audit (Profit Copy)
+        </button>
+      </div>
+      <div class="modal-body" id="repairReceiptModalBody" style="padding-top: 10px;"></div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('repairReceiptModal')">Close</button>
+        <button type="button" class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('repair_receipt', 'DS Maintenance Service Receipt')">📥 Save as PDF</button>
+        <button type="button" class="btn btn-success" onclick="DSReceipt.printRepairReceipt(window.CurrentRepairReceiptData, window.CurrentRepairReceiptViewMode)">🖨 Print Receipt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: 80mm Thermal Receipt Preview -->
+  <div id="thermalReceiptModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3>🔥 Gas Delivery & Refill Slip</h3>
+        <button class="modal-close-btn" onclick="closeModal('thermalReceiptModal')">✕</button>
+      </div>
+      <div style="padding: 10px 16px 0 16px; display: flex; gap: 8px;">
+        <button id="gasReceiptTabClient" class="btn btn-sm btn-primary" style="flex: 1; font-weight: 700; padding: 7px 10px;" onclick="switchGasReceiptMode('customer')">
+          👤 Client Receipt (Customer Copy)
+        </button>
+        <button id="gasReceiptTabOffice" class="btn btn-sm btn-secondary" style="flex: 1; font-weight: 700; padding: 7px 10px;" onclick="switchGasReceiptMode('office')">
+          🏢 Office Audit (Profit Copy)
+        </button>
+      </div>
+      <div class="modal-body" id="thermalReceiptModalBody" style="padding-top: 10px;"></div>
+      <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('thermalReceiptModal')">Close</button>
+        <button type="button" class="btn btn-primary admin-only-report-btn" onclick="openPdfActionModal('gas_receipt', 'DS Gas Delivery Slip')">📥 Save as PDF</button>
+        <button type="button" class="btn btn-success" onclick="DSReceipt.printReceipt(window.CurrentGasReceiptData, window.CurrentGasReceiptViewMode)">🖨 Print Slip</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Live Webcam Snapshot -->
+  <div id="webcamModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>📷 Live Camera Capture</h3>
+        <button class="modal-close-btn" onclick="closeModal('webcamModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="width: 100%; height: 260px; background: #000; border-radius: 8px; overflow: hidden; position: relative;">
+          <video id="webcamVideo" autoplay playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+          <canvas id="webcamCanvas" style="display: none;"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('webcamModal')">Cancel</button>
+        <button type="submit" class="btn btn-success" onclick="captureWebcamSnapshot()">Capture Photo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Customize 5 Buildings -->
+  <div id="customBuildingNamesModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>🏢 Customize & Rename 5 Building Names (Master Admin)</h3>
+        <button class="modal-close-btn" onclick="closeModal('customBuildingNamesModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12.5px; color: #94a3b8; margin-bottom: 14px;">
+          Configure customized commercial names (e.g. <strong>AQ Heights, COD 1, Marina Heights</strong>), official addresses, and gas cylinder rates for all 5 buildings.
+        </p>
+
+        <div id="buildingCustomizerList" style="display: flex; flex-direction: column; gap: 14px;">
+          <!-- Dynamically populated 5 building cards -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('customBuildingNamesModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Delete Password Authorization -->
+  <div id="adminDeletePasswordModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px; border-left: 4px solid #ef4444;">
+      <div class="modal-header">
+        <h3 style="color: #ef4444; display: flex; align-items: center; gap: 8px;">🔒 Admin Security Authorization</h3>
+        <button class="modal-close-btn" onclick="cancelAdminDelete()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 8px;">
+          You are about to permanently delete:
+        </p>
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 10px 12px; margin-bottom: 14px;">
+          <strong id="adminDeleteTargetDescription" style="color: #f87171; font-size: 13px;">Item Record</strong>
+        </div>
+        <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px;">
+          Please enter the <strong>Master Admin Password</strong> to verify and authorize this deletion:
+        </p>
+        <form onsubmit="submitAdminDeletePassword(event)">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label">Master Admin Password *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="adminDeletePasswordInput" class="form-input" placeholder="Enter Admin Password" required autocomplete="current-password" />
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('adminDeletePasswordInput', this)">👁</button>
+            </div>
+            <div id="adminDeletePasswordError" style="display: none; color: #ef4444; font-size: 11.5px; margin-top: 6px; font-weight: 600;"></div>
+          </div>
+          <div class="modal-footer" style="padding-top: 10px; margin-top: 10px; display: flex; justify-content: flex-end; gap: 8px;">
+            <button type="button" class="btn btn-secondary" onclick="cancelAdminDelete()">Cancel</button>
+            <button type="submit" id="adminDeleteConfirmBtn" class="btn btn-danger">🗑️ Verify & Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Change Password (Self & Admin Override) -->
+  <div id="changePasswordModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3>🔑 Change System Password</h3>
+        <button class="modal-close-btn" onclick="closeModal('changePasswordModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleConfirmChangePassword(event)">
+          <input type="hidden" id="changePasswordUserId" />
+          
+          <div class="form-group" id="changePasswordOldGroup">
+            <label class="form-label">Current Password *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="changePasswordOld" class="form-input" placeholder="Enter current password" required />
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('changePasswordOld', this)">👁</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">New Password *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="changePasswordNew" class="form-input" placeholder="Enter new password (min 4 chars)" required />
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('changePasswordNew', this)">👁</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Confirm New Password *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="changePasswordConfirm" class="form-input" placeholder="Confirm new password" required />
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('changePasswordConfirm', this)">👁</button>
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding-top: 10px; margin-top: 10px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('changePasswordModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Interactive Building Drilldown Operational Dossier -->
+  <div id="drilldownDossierModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 id="drilldownDossierTitle">🏢 Building Operational Dossier</h3>
+        <button class="modal-close-btn" onclick="closeModal('drilldownDossierModal')">✕</button>
+      </div>
+      <div class="modal-body" id="drilldownDossierBody">
+        <!-- Dynamically rendered detailed dossier tables -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('drilldownDossierModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Edit Corporate Company Profile -->
+  <div id="corporateProfileModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>🏢 Edit Corporate Company Details (Master Admin)</h3>
+        <button class="modal-close-btn" onclick="closeModal('corporateProfileModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12.5px; color: #94a3b8; margin-bottom: 14px;">
+          Update your company / suite name, official corporate office address, helpline numbers, email, NTN, and audit reference code. These details automatically update across all management reports, audit statements, and receipts.
+        </p>
+
+        <form onsubmit="handleSaveCorporateProfile(event)">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Company / Suite Commercial Name *</label>
+              <input type="text" id="corpInputCompanyName" class="form-input" placeholder="e.g. DS MAINTENANCE" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Audit / Statement Reference Code</label>
+              <input type="text" id="corpInputAuditRef" class="form-input" placeholder="e.g. DSM/AUDIT/2026/REP-8821" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Corporate Office Full Address *</label>
+            <input type="text" id="corpInputAddress" class="form-input" placeholder="e.g. Office No. 907, 9th Floor, Dominion Business Center 01, Jinnah Avenue, Bahria Town Karachi (BTK)" required />
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Helpline Phone *</label>
+              <input type="text" id="corpInputHelpline" class="form-input" placeholder="e.g. +92 21 111-DS-MAINT" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Official Accounts Email *</label>
+              <input type="email" id="corpInputEmail" class="form-input" placeholder="e.g. accounts@dsmaintenance.pk" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">NTN / Tax Registration #</label>
+              <input type="text" id="corpInputNtn" class="form-input" placeholder="e.g. 9028471-4" />
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding-top: 10px; margin-top: 10px;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('corporateProfileModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">💾 Save Corporate Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Export & Multi-Channel Data Share Hub (.dsmync) -->
+  <div id="exportDataHubModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>🔄 Export & Multi-Channel Data Share Hub (.dsmync)</h3>
+        <button class="modal-close-btn" onclick="closeModal('exportDataHubModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: #38bdf8; text-transform: uppercase;">Generated Snapshot Package</div>
+              <div style="font-size: 14px; font-weight: 800; color: #ffffff; margin-top: 2px;">
+                <code id="exportSnapshotFilename" style="background: rgba(0,0,0,0.4); padding: 3px 8px; border-radius: 4px; color: #38bdf8; font-size: 13px;">DS_ALL_BUILDINGS_2026-08-16.dsmync</code>
+              </div>
+            </div>
+            <span class="badge badge-success" style="font-size: 11px; padding: 4px 10px;">🔒 Encrypted Zero-Loss</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-top: 12px; font-size: 12px; color: #cbd5e1; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+            <div><strong>🏢 Target Scope:</strong> <span id="exportSnapshotBuilding">All Buildings</span></div>
+            <div><strong>👤 Operator:</strong> <span id="exportSnapshotUser">Administrator</span></div>
+            <div><strong>📅 Timestamp:</strong> <span id="exportSnapshotTime">Live Now</span></div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 13px; font-weight: 800; color: #38bdf8; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Choose Transfer Channel</h4>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+          <!-- Option 1: Direct File Download -->
+          <div class="kpi-card" style="cursor: pointer; border: 1px solid rgba(56, 189, 248, 0.35); padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeExportDownload()">
+            <div style="font-size: 24px; margin-bottom: 6px;">💾</div>
+            <strong style="color: #38bdf8; font-size: 13.5px;">1. Download File (.dsmync)</strong>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 4px 0 10px 0;">Save offline data file directly to your PC / USB drive for backup or importing into Master Admin.</p>
+            <button class="btn btn-sm btn-primary" style="width: 100%;">📥 Download File</button>
+          </div>
+
+          <!-- Option 2: WhatsApp Share -->
+          <div class="kpi-card" style="cursor: pointer; border: 1px solid rgba(16, 185, 129, 0.35); padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeExportWhatsApp()">
+            <div style="font-size: 24px; margin-bottom: 6px;">📱</div>
+            <strong style="color: #10b981; font-size: 13.5px;">2. Share via WhatsApp</strong>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 4px 0 10px 0;">Downloads the .dsmync file and opens WhatsApp Web/Desktop with pre-filled audit details ready to send.</p>
+            <button class="btn btn-sm btn-success" style="width: 100%; background: #10b981; border-color: #059669;">💬 Open WhatsApp</button>
+          </div>
+
+          <!-- Option 3: Email Share -->
+          <div class="kpi-card" style="cursor: pointer; border: 1px solid rgba(245, 158, 11, 0.35); padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeExportEmail()">
+            <div style="font-size: 24px; margin-bottom: 6px;">✉️</div>
+            <strong style="color: #f59e0b; font-size: 13.5px;">3. Send via Email</strong>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 4px 0 10px 0;">Downloads the .dsmync file and opens your default Email client with Subject and Body pre-filled.</p>
+            <button class="btn btn-sm btn-warning" style="width: 100%; background: #f59e0b; border-color: #d97706; color: #ffffff;">📧 Compose Email</button>
+          </div>
+
+          <!-- Option 4: Print Audit Slip -->
+          <div class="kpi-card" style="cursor: pointer; border: 1px solid rgba(139, 92, 246, 0.35); padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeExportPrintSlip()">
+            <div style="font-size: 24px; margin-bottom: 6px;">🖨️</div>
+            <strong style="color: #a78bfa; font-size: 13.5px;">4. Print Audit Slip</strong>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 4px 0 10px 0;">Prints an 80mm POS thermal summary receipt verifying the data snapshot filename and timestamp.</p>
+            <button class="btn btn-sm btn-secondary" style="width: 100%;">🖨️ Print Slip</button>
+          </div>
+        </div>
+
+        <div class="modal-footer" style="padding-top: 14px; margin-top: 14px;">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('exportDataHubModal')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Daily Building Data Sync Status & Notification Alert (Admin Only) -->
+  <div id="dailySyncAlertModal" class="modal-overlay">
+    <div class="modal-card modal-lg" style="max-width: 780px;">
+      <div class="modal-header">
+        <h3 id="dailySyncModalTitle" style="display: flex; align-items: center; gap: 8px;">
+          <span>🔔</span> Daily Reception Sync Status Alert
+        </h3>
+        <button class="modal-close-btn" onclick="acknowledgeDailySyncAlert()">✕</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Status Alert Header Banner -->
+        <div id="dailySyncAlertBanner" style="background: rgba(239, 68, 68, 0.15); border: 1.5px solid #ef4444; border-radius: 10px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div id="dailySyncAlertTitle" style="font-size: 14.5px; font-weight: 800; color: #f87171;">⚠️ Daily Sync Pending: 3 Buildings Not Synced Today!</div>
+            <div id="dailySyncAlertSubtitle" style="font-size: 12px; color: #cbd5e1; margin-top: 3px;">All reception operators must send their encrypted .dsmync WhatsApp backup file daily.</div>
+          </div>
+          <div id="dailySyncDateBadge" class="badge badge-info" style="font-size: 12px; padding: 6px 12px;">📅 Today: 16 Aug 2026</div>
+        </div>
+
+        <!-- 5 Buildings Live Sync Status Grid -->
+        <div id="dailySyncBuildingsContainer" style="display: grid; grid-template-columns: 1fr; gap: 10px; max-height: 320px; overflow-y: auto; margin-bottom: 16px; padding-right: 4px;">
+          <!-- Rendered dynamically via JS -->
+        </div>
+
+        <!-- Quick Import Action Box -->
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1.5px dashed rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 14px; text-align: center; margin-bottom: 14px;">
+          <div style="font-size: 12.5px; font-weight: 700; color: #38bdf8; margin-bottom: 4px;">📥 Received Reception Data via WhatsApp or USB?</div>
+          <p style="font-size: 11.5px; color: #94a3b8; margin: 0 0 10px 0;">Select or drop the .dsmync file here to immediately merge today's logs into Master Admin.</p>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <input type="file" id="dailySyncFileInput" accept=".dsmync" style="display: none;" onchange="handleDailySyncFileSelected(event)" />
+            <button class="btn btn-primary" onclick="document.getElementById('dailySyncFileInput').click()">📂 Select & Merge .dsmync File</button>
+            <button class="btn btn-secondary" onclick="openExportDataHubModal(); closeModal('dailySyncAlertModal');">🔄 Open Full Sync Hub</button>
+          </div>
+        </div>
+
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="font-size: 11px; color: #64748b;">This reminder appears once daily at login until acknowledged.</div>
+          <button type="button" class="btn btn-success" onclick="acknowledgeDailySyncAlert()" style="font-weight: 700; padding: 8px 18px;">✅ Acknowledge & Dismiss for Today</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: PDF Document Export & Print Location Action Chooser -->
+  <div id="pdfExportOptionsModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 id="pdfExportModalTitle">📄 Export, Save & Print Document Hub</h3>
+        <button class="modal-close-btn" onclick="closeModal('pdfExportOptionsModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 700; color: #38bdf8; text-transform: uppercase;">Target Document for Export</div>
+          <div id="pdfExportDocName" style="font-size: 14px; font-weight: 800; color: #ffffff; margin-top: 2px;">Official Executive Statement</div>
+          <div id="pdfExportDocDetails" style="font-size: 11.5px; color: #94a3b8; margin-top: 4px;">DS Maintenance Management Report</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+          <!-- Action 1: Save PDF to Computer (Downloads) -->
+          <div class="kpi-card" style="cursor: pointer; border: 1.5px solid #38bdf8; padding: 14px; text-align: left; transition: all 0.2s;" onclick="generateAndDownloadPDF()">
+            <div style="font-size: 26px; margin-bottom: 6px;">📥</div>
+            <strong style="color: #38bdf8; font-size: 13.5px;">1. Save PDF to PC</strong>
+            <p style="font-size: 11px; color: #94a3b8; margin: 4px 0 10px 0;">Instantly generates and downloads the <strong>official .PDF document</strong> straight to your computer's <strong>Downloads folder</strong>.</p>
+            <button class="btn btn-sm btn-primary" style="width: 100%;">📥 Download .PDF File</button>
+          </div>
+
+          <!-- Action 2: Export Excel / CSV -->
+          <div class="kpi-card" style="cursor: pointer; border: 1.5px solid #10b981; padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeDirectDownloadCSV()">
+            <div style="font-size: 26px; margin-bottom: 6px;">📊</div>
+            <strong style="color: #10b981; font-size: 13.5px;">2. Export Excel (CSV)</strong>
+            <p style="font-size: 11px; color: #94a3b8; margin: 4px 0 10px 0;">Downloads editable spreadsheet dataset with all columns and mobile contacts to your Downloads folder.</p>
+            <button class="btn btn-sm btn-success" style="width: 100%;">📊 Download .CSV File</button>
+          </div>
+
+          <!-- Action 3: Direct Print -->
+          <div class="kpi-card" style="cursor: pointer; border: 1.5px solid #a855f7; padding: 14px; text-align: left; transition: all 0.2s;" onclick="executeDirectPrintDocument()">
+            <div style="font-size: 26px; margin-bottom: 6px;">🖨️</div>
+            <strong style="color: #c084fc; font-size: 13.5px;">3. Direct Print to Printer</strong>
+            <p style="font-size: 11px; color: #94a3b8; margin: 4px 0 10px 0;">Sends directly to your connected physical A4 office printer or 80mm POS thermal receipt printer.</p>
+            <button class="btn btn-sm btn-secondary" style="width: 100%;">🖨️ Open Print Window</button>
+          </div>
+
+          <!-- Action 4: Direct Share via WhatsApp -->
+          <div class="kpi-card" style="cursor: pointer; border: 1.5px solid #25d366; padding: 14px; text-align: left; transition: all 0.2s;" onclick="sharePdfOnWhatsApp()">
+            <div style="font-size: 26px; margin-bottom: 6px;">💬</div>
+            <strong style="color: #25d366; font-size: 13.5px;">4. Share on WhatsApp</strong>
+            <p style="font-size: 11px; color: #94a3b8; margin: 4px 0 10px 0;">Automatically opens <strong>WhatsApp Desktop / Web</strong> on laptop with full report summary and attaches the saved PDF.</p>
+            <button class="btn btn-sm btn-success" style="width: 100%; background: #25d366; border-color: #22c55e;">💬 Open in WhatsApp</button>
+          </div>
+        </div>
+
+        <div class="modal-footer" style="padding-top: 14px; margin-top: 14px;">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('pdfExportOptionsModal')">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Reception & Admin Flat Status Transition (Active / Inactive / Move-In / Vacate) -->
+  <div id="flatStatusChangeModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">⚡</span>
+          <div>
+            <h3 style="margin: 0;" id="flatStatusChangeModalTitle">Change Apartment Occupancy Status</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;" id="flatStatusChangeModalSubtitle">Update active/inactive status and log into permanent timeline history.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('flatStatusChangeModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveFlatStatusChange(event)">
+          <input type="hidden" id="statusChangeFlatId" />
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">New Target Status *</label>
+              <select id="statusChangeNewStatus" class="form-select" onchange="onFlatStatusChangeModeChange()" style="font-weight: 700; font-size: 13px;" required>
+                <option value="INACTIVE_VACANT">🚪 Inactive / Vacant (Tenant Vacated / Unoccupied)</option>
+                <option value="ACTIVE_TENANT">🟢 Active Tenant Living (New Tenant Move-In)</option>
+                <option value="ACTIVE_OWNER">🏠 Active Owner Living (Property Owner Residing)</option>
+                <option value="UNDER_MAINTENANCE">🛠️ Inactive / Under Renovation & Maintenance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Effective Date *</label>
+              <div class="date-input-group">
+                <input type="date" id="statusChangeEffectiveDate" class="form-input" required />
+                <button type="button" class="date-quick-btn" onclick="setModalDate('statusChangeEffectiveDate', 0)">⚡ Today</button>
+                <button type="button" class="date-quick-btn" onclick="setModalDate('statusChangeEffectiveDate', -1)">📅 Yesterday</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Occupant Details (Only shown for ACTIVE_TENANT or ACTIVE_OWNER) -->
+          <div id="statusChangeOccupantFields" style="display: none; background: rgba(15,23,42,0.7); border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; padding: 14px; margin-bottom: 12px;">
+            <div style="font-size: 12px; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 8px;" id="statusChangeOccupantTitle">
+              Resident Profile Information
+            </div>
+            <div class="form-row-3">
+              <div class="form-group">
+                <label class="form-label" id="statusChangeNameLabel">Resident Full Name *</label>
+                <input type="text" id="statusChangeOccupantName" class="form-input" placeholder="e.g. Muhammad Bilal" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Phone Contact *</label>
+                <input type="text" id="statusChangeOccupantPhone" class="form-input" placeholder="0300-1234567" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">CNIC Number</label>
+                <input type="text" id="statusChangeOccupantCnic" class="form-input" placeholder="42101-xxxxxxx-x" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Transition Reason / Reception Notes *</label>
+            <textarea id="statusChangeReason" class="form-textarea" rows="2" placeholder="e.g. Previous tenant lease completed, keys handed to reception desk." required></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('flatStatusChangeModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">✅ Confirm & Save into Timeline History</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dedicated Flat Occupancy & Status History Timeline Dossier -->
+  <div id="flatOccupancyTimelineModal" class="modal-overlay">
+    <div class="modal-card modal-xl" style="max-width: 960px; max-height: 94vh;">
+      <div class="modal-header" style="padding: 12px 18px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" class="btn btn-sm btn-secondary" style="padding: 4px 10px; font-size: 12px;" onclick="closeFlatTimelineDossierModal()">← Back</button>
+          <div>
+            <h3 style="margin: 0; font-size: 16.5px;" id="timelineModalTitle">Apartment Occupancy Lifecycle & History Timeline</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;" id="timelineModalSubtitle">Complete chronological record of all active & inactive periods, residents, and rental rates.</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button class="btn btn-sm btn-primary" onclick="openFlatStatusChangeModal(window.CurrentTimelineFlatId)">⚡ Change Status (Active / Inactive)</button>
+          <button class="modal-close-btn" onclick="closeFlatTimelineDossierModal()">✕</button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 16px; overflow-y: auto; max-height: calc(94vh - 120px);">
+        <!-- TOP SECTION: Property Owner Record Dossier (UPR OWNER KI DETAILS) -->
+        <div id="timelineOwnerDossierContainer">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Metric KPI Summary Strip -->
+        <div id="timelineStatsSummaryStrip" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 18px;">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Section Title for Timeline -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 6px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 16px;">📜</span>
+            <h4 style="color: #38bdf8; font-size: 13.5px; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Chronological Occupancy Lifecycle Thread</h4>
+          </div>
+          <span id="timelineTotalCountBadge" class="badge badge-info" style="font-size: 11px;">0 Periods</span>
+        </div>
+
+        <!-- BOTTOM SECTION: Vertical Timeline Thread (NEACHY AEK HISTORY TIME LINE CHAL RAHI HO) -->
+        <div id="flatOccupancyTimelineContainer" class="flat-timeline-thread">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 10px 18px;">
+        <button type="button" class="btn btn-secondary" onclick="closeFlatTimelineDossierModal()">Close Timeline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Register Inward Gas Stock Supply / Replenishment Arrival -->
+  <div id="newGasSupplyModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>📥 Log Inward Gas Cylinder Supply / Stock Arrival</h3>
+        <button class="modal-close-btn" onclick="closeModal('newGasSupplyModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleSaveGasSupply(event)">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Target Building Name *</label>
+              <select id="gasSupplyBuildingId" class="form-select" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Arrival Date & Time *</label>
+              <input type="datetime-local" id="gasSupplyDate" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Supplier Company / Plant *</label>
+              <input type="text" id="gasSupplySupplierName" class="form-input" placeholder="e.g. PSO Liquified Gas / Shell / Mehran Gas" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Delivered By (Driver / Rep) *</label>
+              <input type="text" id="gasSupplyDeliveredBy" class="form-input" placeholder="e.g. Muhammad Tariq (Driver)" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Vehicle / Truck # (Optional)</label>
+              <input type="text" id="gasSupplyVehicleNo" class="form-input" placeholder="e.g. LES-4412 / Truck # 9" />
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Quantity Received (Filled Cylinders) *</label>
+              <input type="number" id="gasSupplyQuantity" class="form-input" min="1" value="25" required oninput="calculateGasSupplyTotal()" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Unit Cost Price (PKR) (Optional)</label>
+              <input type="number" id="gasSupplyUnitCost" class="form-input" min="0" step="50" placeholder="e.g. 3100" oninput="calculateGasSupplyTotal()" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Cost (PKR)</label>
+              <input type="number" id="gasSupplyTotalCost" class="form-input" min="0" placeholder="Auto Calculated" />
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Payment Mode</label>
+              <select id="gasSupplyPaymentMode" class="form-select">
+                <option value="HAND_CASH">Hand Cash</option>
+                <option value="BANK_TRANSFER">Bank Online Transfer</option>
+                <option value="CREDIT_ACCOUNT">Credit / Account Payable</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Delivery Challan / Invoice Reference #</label>
+              <input type="text" id="gasSupplyBatchRef" class="form-input" placeholder="e.g. CH-99218 / PSO-INV-04" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Notes / Storage Instructions</label>
+            <textarea id="gasSupplyNotes" class="form-textarea" rows="2" placeholder="e.g. Stored in Ground Floor Main Gas Warehouse Room"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('newGasSupplyModal')">Cancel</button>
+            <button type="submit" class="btn btn-primary">✅ Save Inward Supply & Increment Warehouse Stock</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Card 1 Dossier - All 5 Building Sites Live Operations & Sync Hub -->
+  <div id="masterActiveNodesModal" class="modal-overlay">
+    <div class="modal-card modal-xl" style="max-width: 1050px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">🏢</span>
+          <div>
+            <h3 style="margin: 0;">5-Building Sites Live Operations & Sync Hub</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;" id="masterNodesDossierSubtitle">Live status, last sync timestamp, and financial margins across all buildings.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('masterActiveNodesModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="masterNodesGridContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-bottom: 16px;">
+          <!-- Dynamically populated 5 building cards -->
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Site Code & Name</th>
+                <th>Building Live Status</th>
+                <th>Occupancy (Flats)</th>
+                <th>Period Collections</th>
+                <th>Period Expenses</th>
+                <th>Net Margin</th>
+                <th>Gas In-Stock</th>
+                <th>Staff on Duty</th>
+                <th>Last Synced / Updated</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="masterNodesTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('masterActiveNodesModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Card 2 Dossier - Multi-Site Occupancy & Resident Register -->
+  <div id="masterFlatsOccupancyModal" class="modal-overlay">
+    <div class="modal-card modal-xl" style="max-width: 1100px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">🏠</span>
+          <div>
+            <h3 style="margin: 0;">5-Building Portfolio Occupancy & Resident Register</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;">Site-by-site active occupancy (Owners & Tenants) vs inactive/vacant apartments across all buildings and flats.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('masterFlatsOccupancyModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Multi-Site Summary Row -->
+        <div id="masterFlatsSitesSummaryRow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 14px;">
+          <!-- Site cards populated dynamically -->
+        </div>
+
+        <!-- Filter Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; background: rgba(15,23,42,0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.2);">
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select id="masterFlatsSiteSelector" class="form-select" style="min-width: 180px; padding: 5px 8px; font-size: 12px;" onchange="filterMasterFlatsDossier()"></select>
+            <div style="display: flex; gap: 4px;">
+              <button id="masterFlatStatusAll" class="date-quick-btn active" onclick="setMasterFlatStatusFilter('ALL')">All Units</button>
+              <button id="masterFlatStatusActive" class="date-quick-btn" onclick="setMasterFlatStatusFilter('ACTIVE')">🟢 Active Occupied</button>
+              <button id="masterFlatStatusVacant" class="date-quick-btn" onclick="setMasterFlatStatusFilter('VACANT')">🚪 Inactive / Vacant</button>
+            </div>
+          </div>
+          <div class="search-input-wrapper" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="masterFlatsSearchInput" class="form-input" placeholder="Search flat #, owner, tenant, phone..." onkeyup="filterMasterFlatsDossier()" />
+          </div>
+        </div>
+
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Flat / Floor</th>
+                <th>Building Site</th>
+                <th>Occupancy Status</th>
+                <th>Property Owner</th>
+                <th>Owner Mobile Phone</th>
+                <th>Active Resident / Tenant</th>
+                <th>Tenant Phone</th>
+                <th>Occupancy History Timeline</th>
+              </tr>
+            </thead>
+            <tbody id="masterFlatsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('masterFlatsOccupancyModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Card 3 Dossier - Multi-Site Gas Inventory, Deliveries & Inward Supplies -->
+  <div id="masterGasLogisticsModal" class="modal-overlay">
+    <div class="modal-card modal-xl" style="max-width: 1150px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">🔥</span>
+          <div>
+            <h3 style="margin: 0;">5-Building Gas Logistics, Sales & Thermal Receipts Dossier</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;" id="masterGasDossierSubtitle">Multi-site inventory reserves, active units, customer purchase logs with 80mm receipts, and inward supplies.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('masterGasLogisticsModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Multi-Site Gas Inventory Matrix -->
+        <div class="table-responsive" style="margin-bottom: 16px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Building Site</th>
+                <th>📦 Reserve Stock (Store)</th>
+                <th>🔥 Active in Apartments</th>
+                <th>🔄 Empty Returned</th>
+                <th>🚚 Period Cylinders Sold</th>
+                <th>💵 Period Revenue (PKR)</th>
+                <th>📥 Period Inflow Received</th>
+              </tr>
+            </thead>
+            <tbody id="masterGasSitesTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Subtab Switcher & Filter -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; background: rgba(15,23,42,0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.2);">
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; background: rgba(15,23,42,0.8); border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; padding: 2px;">
+              <button id="masterGasTabSalesBtn" class="btn btn-sm btn-primary" onclick="switchMasterGasDossierTab('sales')" style="padding: 4px 12px; font-size: 11.5px;">🔥 Deliveries & Sales Log (With Receipts)</button>
+              <button id="masterGasTabInflowBtn" class="btn btn-sm btn-secondary" onclick="switchMasterGasDossierTab('inflow')" style="padding: 4px 12px; font-size: 11.5px;">📥 Inward Supply Arrivals Log</button>
+            </div>
+            <select id="masterGasSiteSelector" class="form-select" style="min-width: 180px; padding: 4px 8px; font-size: 12px;" onchange="filterMasterGasDossier()"></select>
+          </div>
+          <div class="search-input-wrapper" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="masterGasSearchInput" class="form-input" placeholder="Search receipt #, flat #, buyer..." onkeyup="filterMasterGasDossier()" />
+          </div>
+        </div>
+
+        <!-- Table 1: Sales / Deliveries Log (with 80mm Receipt Button) -->
+        <div id="masterGasSalesTableContainer" class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Receipt #</th>
+                <th>Delivery Date</th>
+                <th>Building Site</th>
+                <th>Flat #</th>
+                <th>Customer / Resident Details</th>
+                <th>Type & Qty</th>
+                <th>Empty Bottle</th>
+                <th>Total (PKR)</th>
+                <th>Payment Mode</th>
+                <th>Receipt & Actions</th>
+              </tr>
+            </thead>
+            <tbody id="masterGasDeliveriesTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Table 2: Inflow / Supply Arrivals Log -->
+        <div id="masterGasInflowTableContainer" class="table-responsive" style="display: none; max-height: 380px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Arrival Date</th>
+                <th>Building Site</th>
+                <th>Supplier Company</th>
+                <th>Delivered By (Driver)</th>
+                <th>Vehicle #</th>
+                <th>Quantity Received</th>
+                <th>Total Cost</th>
+                <th>Payment Mode</th>
+                <th>Challan / Batch #</th>
+              </tr>
+            </thead>
+            <tbody id="masterGasInflowTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('masterGasLogisticsModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Master Admin Card 4 Dossier - Multi-Site Bahria Karachi Domestic Staff & Maids Registry -->
+  <div id="masterStaffMaidsModal" class="modal-overlay">
+    <div class="modal-card modal-xl" style="max-width: 1100px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">🧹</span>
+          <div>
+            <h3 style="margin: 0;">5-Building Bahria Karachi Verified Domestic Staff & Maids Roster</h3>
+            <p style="font-size: 11.5px; color: #94a3b8; margin: 2px 0 0 0;">Multi-site staff directory, mandatory Bahria registration card #, CNIC verification, and live on-duty attendance.</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('masterStaffMaidsModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- Multi-Site Staff Summary Row -->
+        <div id="masterStaffSitesSummaryRow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 14px;">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Filter Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; background: rgba(15,23,42,0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(56,189,248,0.2);">
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select id="masterStaffSiteSelector" class="form-select" style="min-width: 180px; padding: 5px 8px; font-size: 12px;" onchange="filterMasterStaffDossier()"></select>
+            <div style="display: flex; gap: 4px;">
+              <button id="masterStaffStatusAll" class="date-quick-btn active" onclick="setMasterStaffStatusFilter('ALL')">All Staff</button>
+              <button id="masterStaffStatusOnDuty" class="date-quick-btn" onclick="setMasterStaffStatusFilter('ON_DUTY')">🟢 On Duty</button>
+              <button id="masterStaffStatusOffDuty" class="date-quick-btn" onclick="setMasterStaffStatusFilter('OFF_DUTY')">⚪ Off Duty</button>
+            </div>
+          </div>
+          <div class="search-input-wrapper" style="min-width: 220px;">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="masterStaffSearchInput" class="form-input" placeholder="Search maid name, Bahria Card #, phone..." onkeyup="filterMasterStaffDossier()" />
+          </div>
+        </div>
+
+        <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Staff / Maid Name</th>
+                <th>Building Site</th>
+                <th>Bahria Card # (BTK Verified)</th>
+                <th>Mobile Contact</th>
+                <th>CNIC Number</th>
+                <th>Role Type</th>
+                <th>Authorized Flats</th>
+                <th>Duty Status</th>
+                <th>Last Check-In</th>
+              </tr>
+            </thead>
+            <tbody id="masterStaffTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('masterStaffMaidsModal')">Close</button>
+      </div>
+    </div>
+  <!-- Modal: Document Viewer (Full Screen Inspection) -->
+  <div id="documentViewerModal" class="modal-overlay">
+    <div class="modal-card modal-lg" style="max-width: 900px;">
+      <div class="modal-header">
+        <h3 id="documentViewerTitle" style="display: flex; align-items: center; gap: 8px;">📄 Scanned Document Inspection</h3>
+        <button class="modal-close-btn" onclick="closeModal('documentViewerModal')">✕</button>
+      </div>
+      <div class="modal-body" style="text-align: center; background: #020617; padding: 16px;">
+        <div id="documentViewerContent" style="max-height: 70vh; overflow: auto; display: flex; align-items: center; justify-content: center;">
+          <!-- Dynamically populated document -->
+        </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('documentViewerModal')">Close</button>
+        <a id="documentViewerDownloadBtn" class="btn btn-primary" href="#" target="_blank" download>⬇ Download Document</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Document Camera Scanner -->
+  <div id="documentCameraModal" class="modal-overlay">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 style="display: flex; align-items: center; gap: 8px;">📷 Document Camera Scanner</h3>
+        <button class="modal-close-btn" onclick="closeDocumentCameraModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="position: relative; background: #000; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 380px;">
+          <video id="docCameraVideo" autoplay playsinline style="max-width: 100%; max-height: 480px;"></video>
+          <div style="position: absolute; border: 2px dashed rgba(56, 189, 248, 0.75); width: 85%; height: 80%; pointer-events: none; border-radius: 8px; box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.45);">
+            <div style="position: absolute; top: 10px; left: 14px; font-size: 11.5px; color: #38bdf8; background: rgba(0,0,0,0.7); padding: 3px 8px; border-radius: 4px;">
+              📄 Align Document / CNIC within frame
+            </div>
+          </div>
+        </div>
+        <canvas id="docCameraCanvas" style="display: none;"></canvas>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between;">
+        <button type="button" class="btn btn-secondary" onclick="closeDocumentCameraModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="captureDocumentCameraSnapshot()">📸 Capture & Attach Document</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Supabase Cloud Database & Live Sync Hub -->
+  <div id="supabaseSyncModal" class="modal-overlay">
+    <div class="modal-card modal-lg" style="max-width: 680px; border-left: 4px solid #3ecf8e;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 24px;">⚡</span>
+          <div>
+            <h3 style="color: #3ecf8e; margin: 0;">Supabase Cloud Live Synchronization</h3>
+            <span style="font-size: 11.5px; color: #94a3b8;">Real-time Cloud Database Storage, Offline-First Sync & GitHub Integration</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('supabaseSyncModal')">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Live Connection Status Banner -->
+        <div id="supabaseStatusBanner" style="background: rgba(62, 207, 142, 0.08); border: 1px solid rgba(62, 207, 142, 0.25); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="supabaseStatusIndicator" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #94a3b8;"></span>
+            <div>
+              <strong id="supabaseStatusTitle" style="color: #e2e8f0; font-size: 13px;">Checking Cloud Connection...</strong>
+              <div id="supabaseStatusSubtitle" style="color: #94a3b8; font-size: 11.5px;">Auto-sync runs in the background even if internet disconnects and reconnects.</div>
+            </div>
+          </div>
+          <span id="supabaseLastSyncBadge" class="badge badge-info" style="font-size: 11px;">Status: IDLE</span>
+        </div>
+
+        <form onsubmit="handleSaveSupabaseConfig(event)">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label class="form-label">Supabase Project URL *</label>
+            <input type="url" id="supabaseUrlInput" class="form-input" placeholder="https://your-project-id.supabase.co" required />
+            <span style="font-size: 11px; color: #64748b; margin-top: 3px; display: block;">Found in your Supabase Dashboard &rarr; Project Settings &rarr; API &rarr; Project URL</span>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label class="form-label">Supabase API Key (anon / public or service_role) *</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="supabaseKeyInput" class="form-input" placeholder="eyJhbGciOi..." required />
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('supabaseKeyInput', this)">👁</button>
+            </div>
+            <span style="font-size: 11px; color: #64748b; margin-top: 3px; display: block;">Found in Supabase Dashboard &rarr; Project Settings &rarr; API &rarr; Project API keys</span>
+          </div>
+
+          <div class="form-row-2" style="margin-bottom: 14px;">
+            <div class="form-group">
+              <label class="form-label">Auto-Sync Interval</label>
+              <select id="supabaseSyncInterval" class="form-select">
+                <option value="30">Every 30 Seconds</option>
+                <option value="60" selected>Every 1 Minute (Recommended)</option>
+                <option value="300">Every 5 Minutes</option>
+                <option value="900">Every 15 Minutes</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: center; margin-top: 22px;">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: #cbd5e1; font-size: 13px;">
+                <input type="checkbox" id="supabaseAutoSyncCheckbox" checked style="width: 17px; height: 17px; accent-color: #3ecf8e;" />
+                Enable Automatic Background Sync
+              </label>
+            </div>
+          </div>
+
+          <!-- Log / Progress Box -->
+          <div id="supabaseSyncLogBox" style="display: none; background: #020617; border: 1px solid #1e293b; border-radius: 6px; padding: 10px 12px; margin-bottom: 14px; font-family: monospace; font-size: 11.5px; color: #38bdf8; max-height: 100px; overflow-y: auto;">
+            Ready
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.7); border: 1px dashed rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 12px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <strong style="color: #38bdf8; font-size: 12.5px;">📋 First Time Supabase Setup?</strong>
+              <div style="font-size: 11.5px; color: #94a3b8;">Copy SQL schema and run in Supabase SQL Editor once to create all 18 tables.</div>
+            </div>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="copySupabaseSchemaSql()" style="border-color: #38bdf8; color: #38bdf8;">
+              📋 Copy SQL Schema
+            </button>
+          </div>
+
+          <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding-top: 10px;">
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary" onclick="testSupabaseConnection()">🔌 Test Connection</button>
+              <button type="button" class="btn btn-success" onclick="triggerManualSupabaseSync()" style="background: #059669; border-color: #059669;">⚡ Sync Now (Live)</button>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary" onclick="closeModal('supabaseSyncModal')">Close</button>
+              <button type="submit" class="btn btn-primary" style="background: #3ecf8e; border-color: #3ecf8e; color: #04121a; font-weight: 700;">💾 Save Settings</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Thermal POS Receipt Print Container (80mm / 58mm / A4) -->
+  <div id="printableReceiptContainer" style="display: none;"></div>
+
+  <!-- Scripts -->
+  <script src="js/jspdf.umd.min.js"></script>
+  <script src="js/jspdf.plugin.autotable.min.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/receipt.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
