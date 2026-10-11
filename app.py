@@ -33,7 +33,7 @@ from database import init_database, get_db_connection, hash_password, DB_PATH, B
 from sync_engine import export_building_data, import_building_data
 import supabase_sync
 
-PORT = 58920
+PORT = int(os.environ.get('PORT', 58920))
 SERVER_URL = f"http://127.0.0.1:{PORT}"
 
 # Redirect WebView2 User Data to Local SSD for Instant Performance
@@ -2844,6 +2844,12 @@ def launch_desktop_gui():
 if __name__ == '__main__':
     init_database()
     supabase_sync.start_background_sync(60)
-    server_thread = threading.Thread(target=start_server, daemon=True)
-    server_thread.start()
-    launch_desktop_gui()
+
+    is_cloud = bool(os.environ.get('RENDER') or os.environ.get('PORT') or sys.platform != 'win32' or '--headless' in sys.argv)
+    if is_cloud:
+        print(f"Starting DS Maintenance Server in Cloud/Headless Mode on port {PORT}...")
+        start_server()
+    else:
+        server_thread = threading.Thread(target=start_server, daemon=True)
+        server_thread.start()
+        launch_desktop_gui()
